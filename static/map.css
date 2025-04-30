@@ -1,0 +1,1062 @@
+@import "base.css";
+
+.container {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 8px;
+}
+
+.search-panel {
+  background: white;
+  padding: 24px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 24px;
+}
+
+.route-planner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.location-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.location-inputs input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.transport-mode {
+  margin-bottom: 15px;
+}
+
+.transport-mode select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+}
+
+.primary-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.primary-button:hover {
+  background-color: #45a049;
+}
+
+/* Main layout container */
+.map-content {
+  display: flex;
+  gap: 20px;
+  height: calc(100vh - 200px);
+  min-height: 700px;
+  position: relative;
+  margin-top: 20px;
+}
+
+/* Map container */
+.map-container {
+  display: flex;
+  height: calc(100vh - 80px);
+  margin: 20px;
+  gap: 20px;
+}
+
+#map {
+  flex: 2;
+  min-height: 600px;
+  border: 2px solid red; /* Temporary debug border */
+  background-color: #f0f0f0; /* Light background to see the container */
+}
+
+.sidebar {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* Ensure the map container has a background */
+#map {
+  background: #f5f5f5;
+}
+
+/* Make sure the map and its container are visible */
+#map > div {
+  height: 100%;
+  width: 100%;
+}
+
+.route-info {
+  margin-top: 20px;
+}
+
+.route-stats {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.stat-item {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-label {
+  font-weight: bold;
+  color: #666;
+}
+
+.stat-value {
+  color: #333;
+}
+
+/* Route information panel */
+.route-panel {
+  flex: 1;
+  min-width: 400px;
+  max-width: 500px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.loading-indicator {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #4caf50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.route-summary-card {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  margin-bottom: 10px;
+}
+
+.summary-item h4 {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.summary-item p {
+  margin: 5px 0 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.eco-highlight {
+  background: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  padding-left: 12px;
+}
+
+.direction-steps {
+  margin-top: 20px;
+}
+
+.step {
+  display: flex;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.step-icon {
+  width: 24px;
+  height: 24px;
+  background: #4caf50;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-main {
+  font-size: 14px;
+  color: #333;
+}
+
+.step-sub {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.step-distance {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.error-container {
+  padding: 20px;
+  background: #fff3f3;
+  border-radius: 8px;
+  border-left: 4px solid #dc3545;
+}
+
+.error-container h3 {
+  color: #dc3545;
+  margin-top: 0;
+}
+
+.error-suggestions {
+  margin-top: 15px;
+}
+
+.error-suggestions ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.retry-button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.retry-button:hover {
+  background: #c82333;
+}
+
+/* Keep existing specific map styles */
+
+.eco-route {
+  background-color: #e8f5e9;
+}
+
+.eco-badge {
+  background-color: #00796b;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  margin-left: 8px;
+}
+
+.eco-highlight {
+  background-color: #e8f5e9;
+  border-left: 4px solid #00796b;
+}
+
+.emissions-table tr.selected-route {
+  background-color: #e3f2fd;
+}
+
+.emissions-table tr.eco-route {
+  background-color: #e8f5e9;
+}
+
+.emissions-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.gm-style-iw {
+  padding: 12px;
+}
+
+.gm-style-iw h3 {
+  margin: 0 0 8px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.gm-style-iw p {
+  margin: 4px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Emissions comparison table styles */
+.emissions-comparison {
+  width: 100%;
+  background: white;
+  margin-top: 20px;
+}
+
+.emissions-comparison h3 {
+  margin-bottom: 20px;
+  font-size: 1.4em;
+  color: #333;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
+.emissions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.emissions-table th,
+.emissions-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.emissions-table th {
+  background: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.emissions-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.selected-mode {
+  background-color: #e3f2fd !important;
+}
+
+.current-mode {
+  background: #4caf50;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+}
+
+.place-info {
+  padding: 10px;
+}
+
+.place-info h3 {
+  margin: 0 0 8px 0;
+  color: #1976d2;
+}
+
+.place-info button {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.place-info button:hover {
+  background: #1565c0;
+}
+
+.mode-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.route-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.aqi-info-panel {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 25px;
+}
+
+.aqi-value {
+  font-size: 2.2em;
+  margin: 15px 0;
+  color: #2196f3;
+}
+
+.aqi-category {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.aqi-description {
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.aqi-timestamp {
+  font-size: 0.85em;
+  color: #777;
+}
+
+/* Hover effect */
+.emissions-table tr:hover {
+  background-color: #f5f5f5;
+  transition: background-color 0.2s ease;
+}
+
+/* Container adjustments */
+#routesContainer {
+  position: static;
+  width: auto;
+  max-height: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+  .map-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .map-container {
+    height: 500px;
+  }
+
+  .route-panel {
+    width: 100%;
+  }
+}
+
+.transit-details {
+  margin-top: 8px;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.transit-segment {
+  margin: 8px 0;
+  padding: 8px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.transit-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.vehicle-icon {
+  font-size: 1.2em;
+}
+
+.transit-time {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.transit-stops {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 4px;
+}
+
+.mode-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Remove any overflow scrolling */
+.route-panel,
+.route-info-container,
+.emissions-comparison {
+  overflow: visible;
+}
+
+/* Adjust table to fit content */
+.emissions-table th,
+.emissions-table td {
+  padding: 12px;
+  vertical-align: top;
+}
+
+.route-controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.secondary-button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondary-button:hover {
+  background: #f5f5f5;
+}
+
+.secondary-button.active {
+  background: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.eco-route {
+  background: #e8f5e9;
+}
+
+.eco-badge {
+  background: #4caf50;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  margin-left: 8px;
+}
+
+.aqi-info-panel {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+/* Route inputs styling */
+.route-inputs {
+  margin-bottom: 25px;
+}
+
+.route-inputs input,
+.route-inputs select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.route-inputs button {
+  width: 100%;
+  padding: 12px;
+  background: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.route-inputs button:hover {
+  background: #1976d2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .map-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #map {
+    height: 500px;
+  }
+
+  .sidebar {
+    max-width: none;
+    width: 100%;
+  }
+}
+
+/* Style the autocomplete dropdown */
+.pac-container {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-family: inherit;
+  border: 1px solid #ddd;
+  margin-top: 2px;
+}
+
+.pac-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.5;
+  border-top: 1px solid #e6e6e6;
+}
+
+.pac-item:first-child {
+  border-top: none;
+}
+
+.pac-item:hover {
+  background-color: #f5f5f5;
+}
+
+.pac-item-query {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Style the input fields */
+.route-inputs input {
+  padding-right: 30px; /* Make room for the clear button */
+}
+
+/* Add a clear button style */
+.route-inputs input::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.route-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.route-inputs input,
+.route-inputs select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.route-inputs button {
+  padding: 10px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.route-inputs button:hover {
+  background: #45a049;
+}
+
+.route-summary-section {
+  margin: 20px 0;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.aqi-info-panel {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.aqi-info-panel h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.aqi-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.aqi-details {
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.aqi-details p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.aqi-recommendation {
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.route-info {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#emissions-info {
+  margin-top: 15px;
+  padding: 10px;
+  background: #e8f5e9;
+  border-radius: 4px;
+}
+
+.aqi-info-panel.error {
+  border-left: 4px solid #ff4444;
+  background-color: #fff8f8;
+}
+
+.error-message {
+  color: #cc0000;
+  font-size: 14px;
+  padding: 10px;
+  background: rgba(255, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.route-inputs-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  flex: 1;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.calculate-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.calculate-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Success Message Styling */
+.alert {
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.alert i {
+  font-size: 1.2rem;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* Email Section Styling */
+.email-share-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1.5rem;
+}
+
+.email-share-section h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.form-group input[type="email"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input[type="email"]:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+  outline: none;
+}
+
+/* Email Button Styling */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #27ae60;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Add icon to email button */
+.btn-primary i {
+  font-size: 1.1rem;
+}
+
+/* Disable state */
+.btn-primary:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading state for button */
+.btn-primary.loading {
+  position: relative;
+  color: transparent;
+}
+
+.btn-primary.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Toggle Switch Styles */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

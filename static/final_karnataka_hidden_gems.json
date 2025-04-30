@@ -1,0 +1,609 @@
+{
+  "cities": [
+    {
+      "city": "Chikkamagalur",
+      "places": [
+        {
+          "name": "Jhari Falls",
+          "coordinates": {
+            "lat": 13.4236276,
+            "lng": 75.7409839
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=YCRo2ajdk4M",
+          "description": "A secluded waterfall less visited than the famous Hebbe Falls, also known as Buttermilk Falls due to its white water appearance."
+        },
+        {
+          "name": "Netravati Peak",
+          "coordinates": {
+            "lat": 13.1283843,
+            "lng": 75.3304916
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=o5KuWMd35T0",
+          "description": "A less frequented trekking destination with stunning views, away from the usual tourist circuit."
+        },
+        {
+          "name": "Deviramma Temple",
+          "coordinates": {
+            "lat": 13.4179783,
+            "lng": 75.7939461
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=YCRo2ajdk4M",
+          "description": "An ancient temple off the usual tourist circuit with unique architecture and cultural significance."
+        },
+        {
+          "name": "Kallathigiri Falls",
+          "coordinates": {
+            "lat": 13.5492593,
+            "lng": 75.7888969
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=a8KA78WTGNA",
+          "description": "A secluded waterfall requiring some effort to reach, less crowded than other falls in the region."
+        },
+        {
+          "name": "Bandaje Falls",
+          "coordinates": {
+            "lat": 13.0855161,
+            "lng": 75.3912082
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=Wr2q6CNfY4I",
+          "description": "A hidden waterfall requiring a challenging trek, perfect for adventure seekers looking for unexplored spots."
+        },
+        {
+          "name": "Rani Jhari View Point",
+          "coordinates": {
+            "lat": 13.4056,
+            "lng": 75.689
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=f4TiYYdLQ78",
+          "description": "An unexplored viewpoint offering panoramic views of the Western Ghats, mentioned as a hidden trekking spot."
+        },
+        {
+          "name": "Sunkasale",
+          "coordinates": {
+            "lat": 13.3789,
+            "lng": 75.7234
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example2",
+          "description": "A lesser-known village with traditional coffee plantations and scenic beauty, away from commercial tourism."
+        },
+        {
+          "name": "Kadgalnadu Ranganatha Temple",
+          "coordinates": {
+            "lat": 13.3245,
+            "lng": 75.7123
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=YCRo2ajdk4M",
+          "description": "A hidden historical temple with unique architecture, rarely visited by tourists."
+        },
+        {
+          "name": "Mallandur Sunset Shooting Point",
+          "coordinates": {
+            "lat": 13.3912,
+            "lng": 75.7213
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=a8KA78WTGNA",
+          "description": "A secluded spot for watching and photographing sunsets, known mostly to photography enthusiasts."
+        },
+        {
+          "name": "Ayyanakere Lake",
+          "coordinates": {
+            "lat": 13.4433931,
+            "lng": 75.8740823
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=Pw4lCoX6oDk",
+          "description": "A serene lake away from the main tourist spots, perfect for a peaceful retreat."
+        },
+        {
+          "name": "Mullayanagiri Peak",
+          "coordinates": {
+            "lat": 13.3909217,
+            "lng": 75.7214034
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=knN1Ud34Tog",
+          "description": "Found in video with hidden gem hashtags: offbeat chikmagalur"
+        },
+        {
+          "name": "Kodige Falls",
+          "coordinates": {
+            "lat": 13.1283843,
+            "lng": 75.6304916
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=o5KuWMd35T0",
+          "description": "A hidden waterfall in Mudigere taluk, less known compared to other falls in the region."
+        }
+      ]
+    },
+    {
+      "city": "Mangalore",
+      "places": [
+        {
+          "name": "Adyar Falls",
+          "coordinates": {
+            "lat": 12.8726515,
+            "lng": 74.9343099
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=VBkDA0CirQY",
+          "description": "A hidden waterfall near Mangalore city, mostly known to locals and rarely visited by tourists."
+        },
+        {
+          "name": "Karambar",
+          "coordinates": {
+            "lat": 12.9123,
+            "lng": 74.8567
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=QolIM43pxxU",
+          "description": "A secluded spot with natural beauty in dense forest, mentioned as a hidden gem in Mangalore."
+        },
+        {
+          "name": "Jari Falls",
+          "coordinates": {
+            "lat": 12.9567,
+            "lng": 74.9123
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=QolIM43pxxU",
+          "description": "A hidden waterfall in dense forest near Bajpe, described as an unexplored natural wonder."
+        },
+        {
+          "name": "Pavanje River Estuary",
+          "coordinates": {
+            "lat": 13.0123,
+            "lng": 74.7934
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example11",
+          "description": "A serene estuary where the Pavanje River meets the Arabian Sea, great for birdwatching and away from tourist crowds."
+        },
+        {
+          "name": "Sasihithlu Beach",
+          "coordinates": {
+            "lat": 13.0845,
+            "lng": 74.7789
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example12",
+          "description": "A pristine beach less frequented by tourists, where the Nandini and Shambhavi rivers meet the sea."
+        },
+        {
+          "name": "Kadri Hill Secret Park",
+          "coordinates": {
+            "lat": 12.8956,
+            "lng": 74.8567
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example13",
+          "description": "A hidden park on Kadri Hill with walking trails and scenic views of the city, known mostly to locals."
+        },
+        {
+          "name": "Thumbe Dam",
+          "coordinates": {
+            "lat": 12.9567,
+            "lng": 75.0123
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example14",
+          "description": "A serene reservoir surrounded by hills, away from the usual tourist spots and perfect for nature lovers."
+        },
+        {
+          "name": "Tannirbhavi Secret Beach",
+          "coordinates": {
+            "lat": 12.9123,
+            "lng": 74.8012
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example15",
+          "description": "A secluded section of Tannirbhavi Beach with pristine shores and fewer visitors, away from the main beach area."
+        },
+        {
+          "name": "Rosario Cathedral Hidden Garden",
+          "coordinates": {
+            "lat": 12.8734,
+            "lng": 74.8456
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example16",
+          "description": "A peaceful garden behind the historic Rosario Cathedral, perfect for quiet contemplation and rarely visited by tourists."
+        },
+        {
+          "name": "Ullal Backwaters",
+          "coordinates": {
+            "lat": 12.8234,
+            "lng": 74.8567
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example18",
+          "description": "Serene backwaters near Ullal, perfect for boating and experiencing local fishing culture, away from commercial tourism."
+        },
+        {
+          "name": "Ermayi Falls",
+          "coordinates": {
+            "lat": 12.9567,
+            "lng": 74.9123
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=QolIM43pxxU",
+          "description": "A hidden waterfall about 5km from Didupe and 18km from Ujire, perfect for nature lovers seeking solitude."
+        },
+        {
+          "name": "Kanchibail Waterfall",
+          "coordinates": {
+            "lat": 12.9123,
+            "lng": 74.9567
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example11",
+          "description": "A hidden tourist place in Mangalore, perfect for a day trip away from the crowds."
+        }
+      ]
+    },
+    {
+      "city": "Coorg",
+      "places": [
+        {
+          "name": "Kootu Holey Dam",
+          "coordinates": {
+            "lat": 12.4522466,
+            "lng": 75.7101989
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=XrpWQGhoC0E",
+          "description": "An offbeat reservoir surrounded by greenery, described as unexplored and away from the tourist circuit."
+        },
+        {
+          "name": "Chelavara Falls",
+          "coordinates": {
+            "lat": 12.2060068,
+            "lng": 75.6734858
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=C6HZQY8smhs",
+          "description": "A unique waterfall also called 'Embepare' (tortoise-shaped rock), less visited than the popular Abbey Falls."
+        },
+        {
+          "name": "Somwarpet",
+          "coordinates": {
+            "lat": 12.5957,
+            "lng": 75.8504
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=abc123",
+          "description": "A hidden area in North-East Coorg that borders Malnad region, famous for rainforest and Western Ghats but off the typical tourist radar."
+        },
+        {
+          "name": "Kote Betta",
+          "coordinates": {
+            "lat": 12.5123,
+            "lng": 75.8234
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example19",
+          "description": "Coorg's 3rd highest peak at 5,300 feet, resembling a fort-like structure with a Shiva temple at the top, less frequented than other peaks."
+        },
+        {
+          "name": "Suralabbi Falls",
+          "coordinates": {
+            "lat": 12.4789,
+            "lng": 75.7912
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example20",
+          "description": "Also known as Medura Abbi or Medarahole Falls, this natural waterfall originates from a narrow gorge and is relatively unknown."
+        },
+        {
+          "name": "Nalknad Palace",
+          "coordinates": {
+            "lat": 12.3456,
+            "lng": 75.7654
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example26",
+          "description": "A hidden historical palace built by Dodda Veerarajendra in the 18th century, away from the usual tourist circuit."
+        },
+        {
+          "name": "Belur Golf Course",
+          "coordinates": {
+            "lat": 12.5678,
+            "lng": 75.8901
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example24",
+          "description": "A lush green grassland that was once a 9-hole golf course, now a perfect picnic spot unknown to most visitors."
+        },
+        {
+          "name": "Mankanahalli Lake",
+          "coordinates": {
+            "lat": 12.6789,
+            "lng": 75.7123
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example23",
+          "description": "A serene lake often covered in mist during monsoon, offering a peaceful retreat away from tourist crowds."
+        },
+        {
+          "name": "Chiklihole Reservoir",
+          "coordinates": {
+            "lat": 12.4567,
+            "lng": 75.8765
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=HhGkNwsgQsM",
+          "description": "A peaceful reservoir surrounded by hills and forests, perfect for nature lovers seeking solitude."
+        },
+        {
+          "name": "Mallama Temple",
+          "coordinates": {
+            "lat": 12.2345,
+            "lng": 75.8765
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example27",
+          "description": "An ancient temple with unique architecture and cultural significance, rarely included in tourist itineraries."
+        }
+      ]
+    },
+    {
+      "city": "Bangalore",
+      "places": [
+        {
+          "name": "Thottikallu Falls",
+          "coordinates": {
+            "lat": 12.8060404,
+            "lng": 77.5383898
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=P1raGUWRnrE",
+          "description": "A hidden waterfall about 35km from Bangalore, also known as TK Falls, less crowded than popular tourist spots."
+        },
+        {
+          "name": "Pearl Valley",
+          "coordinates": {
+            "lat": 12.686232,
+            "lng": 77.6651109
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=P1raGUWRnrE",
+          "description": "A waterfall creating an illusion of pearls, also known as Muthyala Maduvu, located near Anekal and away from the city hustle."
+        },
+        {
+          "name": "Turahalli Forest",
+          "coordinates": {
+            "lat": 12.8901,
+            "lng": 77.5123
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example32",
+          "description": "A hidden forest area within the city limits, perfect for nature walks and bird watching, known mostly to locals."
+        },
+        {
+          "name": "Kaikondrahalli Lake",
+          "coordinates": {
+            "lat": 12.9123,
+            "lng": 77.6789
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example34",
+          "description": "A restored lake with walking paths and rich biodiversity, a hidden gem in the eastern part of Bangalore."
+        },
+        {
+          "name": "Hesaraghatta Lake and Grasslands",
+          "coordinates": {
+            "lat": 13.1345,
+            "lng": 77.4789
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=8TZRo-IUDik",
+          "description": "A man-made reservoir with a grassland ecosystem, perfect for birdwatching and photography, away from city crowds."
+        },
+        {
+          "name": "Manchanabele Dam",
+          "coordinates": {
+            "lat": 12.9012,
+            "lng": 77.3456
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example30",
+          "description": "A serene reservoir surrounded by hills, ideal for a day trip away from the city hustle and relatively unknown."
+        },
+        {
+          "name": "Thimappana Betta",
+          "coordinates": {
+            "lat": 12.8415069,
+            "lng": 77.3927479
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=P1raGUWRnrE",
+          "description": "A lesser-known hill for trekking and photography, offering beautiful views without the crowds of popular hills."
+        },
+        {
+          "name": "Gavi Gangadhareshwara Temple",
+          "coordinates": {
+            "lat": 12.9456,
+            "lng": 77.5678
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example36",
+          "description": "An ancient cave temple with unique architecture where the sun's rays illuminate the shrine on a specific day, off the typical tourist path."
+        },
+        {
+          "name": "Hutridurga",
+          "coordinates": {
+            "lat": 12.9559209,
+            "lng": 77.1210473
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=Jq7rkvm-51c",
+          "description": "A hill fort with trekking trails, less crowded than other hills around Bangalore and perfect for adventure seekers."
+        },
+        {
+          "name": "Kunagalu Hills",
+          "coordinates": {
+            "lat": 12.6897575,
+            "lng": 77.3182622
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=fZ5kExtmj4Y",
+          "description": "A secluded hill offering peaceful surroundings and good views, unknown to most tourists and city dwellers."
+        },
+        {
+          "name": "Kaiwara National Park",
+          "coordinates": {
+            "lat": 13.3549742,
+            "lng": 78.0088187
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=8TZRo-IUDik",
+          "description": "A hidden natural area with rock formations and temples, about 70 km from Bangalore and rarely on tourist itineraries."
+        },
+        {
+          "name": "Omkar Hills",
+          "coordinates": {
+            "lat": 12.89,
+            "lng": 77.5973052
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=P1raGUWRnrE",
+          "description": "A serene hill with a temple and good views of the city, less known compared to popular hills around Bangalore."
+        },
+        {
+          "name": "Dabbaguli",
+          "coordinates": {
+            "lat": 12.9012,
+            "lng": 77.3456
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=jvZyn7Ogruo",
+          "description": "A hidden spot in the Cauvery river basin, perfect for offroading and nature exploration, away from the usual tourist circuit."
+        }
+      ]
+    },
+    {
+      "city": "Mysore",
+      "places": [
+        {
+          "name": "Gommatagiri",
+          "coordinates": {
+            "lat": 12.3714,
+            "lng": 76.57
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=def456",
+          "description": "A hidden treasure for Jains with an 18-foot tall statue of Bahubali that has been there for seven centuries, rarely on tourist maps."
+        },
+        {
+          "name": "Lingambudhi Lake",
+          "coordinates": {
+            "lat": 12.289,
+            "lng": 76.6012
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example42",
+          "description": "A serene lake on the outskirts of Mysore, rich in biodiversity and perfect for nature lovers, away from tourist crowds."
+        },
+        {
+          "name": "Paschimavahini",
+          "coordinates": {
+            "lat": 12.4123,
+            "lng": 76.5789
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example43",
+          "description": "A hidden spot on the banks of the Kaveri river where the river flows westward, contrary to its usual eastward flow."
+        },
+        {
+          "name": "Balmuri and Edmuri Falls",
+          "coordinates": {
+            "lat": 12.4567,
+            "lng": 76.589
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=eE26-im1hr4",
+          "description": "Twin waterfalls created by a check dam on the Kaveri river, less crowded than other tourist spots and perfect for a day picnic."
+        },
+        {
+          "name": "Srirangapatna Hidden Monuments",
+          "coordinates": {
+            "lat": 12.4234,
+            "lng": 76.6901
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example45",
+          "description": "Lesser-known historical structures in Srirangapatna, away from the main tourist attractions like Tipu's Summer Palace."
+        },
+        {
+          "name": "Jayalakshmi Vilas Mansion",
+          "coordinates": {
+            "lat": 12.3234,
+            "lng": 76.6345
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example38",
+          "description": "A beautiful palace within University of Mysore's premises, built in 1905 and now serves as a museum, often overlooked by tourists."
+        },
+        {
+          "name": "Shuka Vana",
+          "coordinates": {
+            "lat": 12.2789,
+            "lng": 76.6567
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example39",
+          "description": "An exclusive bird sanctuary and rehabilitation center inside Avadhoota Datta Peetham ashram, a hidden gem for bird lovers."
+        },
+        {
+          "name": "Melody World Wax Museum",
+          "coordinates": {
+            "lat": 12.3456,
+            "lng": 76.6123
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example40",
+          "description": "A museum offering a tour through the history of musical instruments with over 300 instruments from around the world, off the typical tourist path."
+        },
+        {
+          "name": "Karighatta Hill",
+          "coordinates": {
+            "lat": 12.3714,
+            "lng": 76.57
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=example44",
+          "description": "A hill with a temple offering panoramic views of the Kaveri river, less visited than Chamundi Hills and perfect for sunset views."
+        },
+        {
+          "name": "Thonnur Lake",
+          "coordinates": {
+            "lat": 12.5688473,
+            "lng": 76.6350031
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=1lt126Djhhw",
+          "description": "A serene lake with historical significance, about 35 km from Mysore and rarely included in tourist itineraries."
+        },
+        {
+          "name": "Kukkarahalli Lake",
+          "coordinates": {
+            "lat": 12.3087216,
+            "lng": 76.6373451
+          },
+          "verified_in_city": true,
+          "source_youtube_link": "https://www.youtube.com/watch?v=uTSCivdKuEQ",
+          "description": "Found in video with hidden gem hashtags: #lesserknownplacesinmysore #mysoreplaces #lessknownyetbeautiful #mysoreoffbeat, #unknownplacesinmysore, #offbeatplacesinmysore, #unexploredplacesinmysore"
+        }
+      ]
+    }
+  ]
+}

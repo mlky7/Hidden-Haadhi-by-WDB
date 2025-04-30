@@ -1,0 +1,296 @@
+/* Base styles shared across all pages */
+:root {
+  --primary-color: #012808;
+  --secondary-color: #ffd700;
+  --text-color: #333;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --heading-font: "Poppins", sans-serif;
+  --body-font: "Inter", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Apply heading font to all headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+
+/* Common button styles */
+.primary-button {
+  font-family: var(--body-font);
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+  background-color: #ffed4a;
+  transform: translateY(-2px);
+}
+
+/* Common card styles */
+.card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+/* Navbar Base Styles */
+.navbar {
+  background-color: rgba(1, 40, 12, 0.95);
+  padding: 0; /* Reduced padding */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  height: 70px; /* Slightly reduced height */
+}
+
+.nav-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem; /* Reduced padding */
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-img {
+  height: 45px; /* Slightly reduced logo size */
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Links Container */
+.nav-links-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Reduced gap */
+  margin: 0;
+  padding: 0;
+}
+
+/* Feature Links */
+.feature-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 0.6rem; /* Reduced padding */
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+  font-size: 0.85rem; /* Slightly smaller font */
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.feature-link:hover {
+  background-color: rgba(255, 215, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Special buttons in navbar */
+.travel-planner-btn {
+  background-color: #ffd700 !important;
+  color: #012808 !important;
+  padding: 0.5rem 1rem !important; /* Reduced padding */
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 0.85rem; /* Slightly smaller font */
+  white-space: nowrap;
+}
+
+.travel-planner-btn:hover {
+  background-color: #ffed4a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Main content adjustment */
+.main-content {
+  padding-top: 80px;
+  min-height: calc(100vh - 80px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .nav-content {
+    padding: 0 0.75rem;
+  }
+
+  .feature-link {
+    padding: 0.4rem 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 60px; /* Even smaller on mobile */
+  }
+
+  .nav-content {
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  .nav-links-container {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust to match new navbar height */
+    left: 0;
+    right: 0;
+    background-color: rgba(1, 40, 12, 0.95);
+    padding: 1rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .nav-links-container.active {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .feature-link {
+    padding: 0.75rem 1rem;
+    justify-content: center;
+  }
+
+  .travel-planner-btn {
+    padding: 0.5rem 0.75rem !important;
+    text-align: center;
+  }
+
+  .logo-img {
+    height: 35px; /* Smaller logo on mobile */
+  }
+}
+
+/* Specific page adjustments */
+.login-container,
+.register-container,
+.dashboard-container {
+  padding-top: 2rem;
+  margin-top: 80px;
+}
+
+/* Apply body font to form elements */
+input,
+select,
+textarea,
+button {
+  font-family: var(--body-font);
+}
+
+/* Additional styles for gallery pages */
+.main-content {
+  padding-top: 80px; /* Adjust based on navbar height */
+  min-height: calc(100vh - 80px);
+}
+
+@media (max-width: 768px) {
+  .nav-links-container {
+    display: none;
+  }
+
+  .nav-links-container.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: rgba(1, 40, 12, 0.95);
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .nav-content {
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+}
+
+/* Ensure proper spacing for form containers */
+.login-container,
+.register-container {
+  padding-top: 2rem;
+  margin-top: 80px;
+}

@@ -1,0 +1,86 @@
+{% extends "base.html" %} {% block content %}
+<div class="gallery-home-container">
+  <div class="gallery-welcome">
+    <h1>Karnataka Places Gallery</h1>
+    <p>Discover and share beautiful places across Karnataka</p>
+
+    <div class="gallery-actions">
+      {% if current_user.is_authenticated %}
+      <a href="{{ url_for('gallery.view') }}" class="btn-primary"
+        >View My Gallery</a
+      >
+      {% else %}
+      <div class="auth-buttons">
+        <a href="{{ url_for('login') }}" class="btn-primary">Login</a>
+        <a href="{{ url_for('register') }}" class="btn-secondary">Register</a>
+      </div>
+      <p class="auth-note">Login or register to start building your gallery</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .gallery-home-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .gallery-welcome {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .gallery-welcome h1 {
+    color: #012808;
+    margin-bottom: 20px;
+  }
+
+  .gallery-actions {
+    margin-top: 40px;
+  }
+
+  .auth-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background-color: #012808;
+    color: white;
+  }
+
+  .btn-secondary {
+    background-color: white;
+    color: #012808;
+    border: 2px solid #012808;
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .auth-note {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 20px;
+  }
+</style>
+{% endblock %}

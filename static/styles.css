@@ -1,0 +1,101 @@
+.distance-warning {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.route-info-container {
+  padding: 15px;
+}
+
+.aqi-info-panel {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.aqi-value {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.aqi-category {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.station-info {
+  padding: 10px;
+}
+
+.station-info h3 {
+  margin: 0 0 8px 0;
+}
+
+.station-info p {
+  margin: 5px 0;
+}
+
+.eco-badge {
+  background-color: #4caf50;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+}
+
+.selected-route {
+  background-color: #e3f2fd;
+}
+
+.eco-route {
+  background-color: #e8f5e9;
+}
+
+.provider-selection {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 5px;
+}
+
+.provider-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+.provider-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.provider-btn:hover {
+  opacity: 0.8;
+}
+
+.provider-info {
+  margin: 10px 0;
+  padding: 5px 10px;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.network-info-window {
+  min-width: 300px;
+  max-width: 400px;
+}

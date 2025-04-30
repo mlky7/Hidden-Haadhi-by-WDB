@@ -1,0 +1,113 @@
+{% extends "base.html" %} {% block additional_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='homepage.css') }}"
+/>
+{% endblock %} {% block content %}
+<!-- Main Content -->
+<main class="main-content">
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="avatar-section">
+        <img
+          src="{{ url_for('static', filename='images/Karnataka.png') }}"
+          alt="Karnataka Map"
+          class="hero-avatar"
+        />
+      </div>
+      <div class="hero-text">
+        <h1 class="hero-title">Discover Karnataka's Hidden Gems</h1>
+        <p class="hero-subtitle">
+          Your AI-powered journey through unexplored destinations
+        </p>
+        <div class="hero-buttons">
+          <button
+            class="plan-trip-btn"
+            onclick="window.location.href='{{ url_for('travel_planner') }}'"
+          >
+            Plan Your Trip
+          </button>
+          <button
+            class="eco-calc-btn"
+            onclick="window.location.href='{{ url_for('calculate_footprint') }}'"
+          >
+            Calculate Carbon Footprint
+            <i class="fas fa-leaf"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <section class="about-us">
+    <div class="about-us-content">
+      <h2>About Us</h2>
+      <div class="about-us-grid">
+        <div class="about-us-text">
+          <p>
+            Hidden ಹಾದಿ (Haadi) is your gateway to discovering Karnataka's
+            unexplored treasures. Our name combines English and Kannada, where
+            "ಹಾದಿ" (Haadi) means "path" - symbolizing our commitment to guiding
+            you through the lesser-known paths of Karnataka.
+          </p>
+          <p>
+            We're dedicated to promoting sustainable tourism while helping
+            travelers discover authentic experiences. Our AI-powered platform
+            helps you:
+          </p>
+          <ul>
+            <li>Plan eco-friendly travel routes</li>
+            <li>Check network connectivity in remote areas</li>
+            <li>Calculate and reduce your carbon footprint</li>
+            <li>Discover hidden gems across Karnataka</li>
+          </ul>
+        </div>
+        <div class="about-us-image">
+          <img
+            src="{{ url_for('static', filename='images/About.png') }}"
+            alt="Karnataka Tourism"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <h2>About Hidden ಹಾದಿ</h2>
+      <div class="features">
+        <div class="feature-card">
+          <img
+            src="{{ url_for('static', filename='images/Asset1.png') }}"
+            alt="Route Planning"
+            class="feature-icon"
+          />
+          <h3>Smart Route Planning</h3>
+          <p>Discover the most efficient and scenic routes through Karnataka</p>
+        </div>
+        <div class="feature-card">
+          <img
+            src="{{ url_for('static', filename='images/Asset2.png') }}"
+            alt="Network Coverage"
+            class="feature-icon"
+          />
+          <h3>Network Coverage</h3>
+          <p>Stay connected with our network coverage checker</p>
+        </div>
+        <div class="feature-card">
+          <img
+            src="{{ url_for('static', filename='images/Asset3.png') }}"
+            alt="Eco-friendly"
+            class="feature-icon"
+          />
+          <h3>Eco-friendly Travel</h3>
+          <p>Plan sustainable trips that minimize environmental impact</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

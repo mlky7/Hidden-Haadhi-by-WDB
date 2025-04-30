@@ -1,0 +1,389 @@
+/* Reset main-content padding from base.css */
+.main-content {
+  padding-top: 0;
+  min-height: calc(100vh - 100px); /* Subtract navbar height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px; /* Add margin to account for navbar */
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.calculator-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.calculator-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.results-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Calculator title styles */
+.calculator-card h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.calculator-description {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(1, 40, 8, 0.1);
+  outline: none;
+}
+
+/* Calculate button styling */
+.calculate-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.calculate-btn:hover {
+  background-color: #023d0c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(1, 40, 8, 0.15);
+}
+
+.calculate-btn:active {
+  transform: translateY(0);
+}
+
+/* Results styling */
+.emissions-breakdown {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.emissions-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #329453;
+  transition: all 0.3s ease;
+}
+
+.emissions-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.emissions-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.emissions-card p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.emissions-card .emissions {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.emissions-card.total {
+  background: green;
+  color: white;
+  border-left: none;
+}
+
+.emissions-card.total h3,
+.emissions-card.total p,
+.emissions-card.total .emissions {
+  color: white;
+}
+
+/* Alternatives section */
+.alternatives {
+  margin-top: 2.5rem;
+}
+
+.alternatives h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.alternatives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.alternative-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.alternative-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.reduction-badge {
+  background: #4caf50;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+}
+
+/* Eco tips section */
+.eco-tips {
+  margin-top: 2.5rem;
+  padding: 1.8rem;
+  background: #f1f8e9;
+  border-radius: 12px;
+  border: 1px solid #c5e1a5;
+}
+
+.eco-tips h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+}
+
+.eco-tips ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.eco-tips li {
+  margin: 0.8rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #2c5530;
+}
+
+.eco-tips li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+}
+
+/* Emissions comparison table styles */
+.emissions-comparison {
+  width: 100%;
+  max-width: 1200px; /* Increased from default */
+  background: white;
+  margin: 20px auto; /* Added auto margins for centering */
+}
+
+.emissions-table {
+  width: 100%;
+  min-width: 800px; /* Added minimum width */
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Add horizontal scroll for mobile */
+@media (max-width: 768px) {
+  .emissions-comparison {
+    overflow-x: auto;
+    padding: 0 15px;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .calculator-container {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator-card,
+  .results-card {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    min-height: calc(100vh - 80px);
+    margin-top: 80px;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .calculator-card,
+  .results-card {
+    padding: 1.5rem;
+  }
+
+  .calculator-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .form-group label {
+    font-size: 1rem;
+  }
+
+  .emissions-card .emissions {
+    font-size: 1.8rem;
+  }
+}
+
+/* Packing Assistant Form Styles */
+.form-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.form-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.form-group select[multiple] {
+  height: auto;
+  min-height: 120px;
+}
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stat-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.loading {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.packing-list {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-section {
+    padding: 1rem;
+  }
+
+  .stat-cards {
+    grid-template-columns: 1fr;
+  }
+}

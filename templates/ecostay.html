@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% block title %}EcoStay - Find Eco-Friendly
+Accommodations{% endblock %} {% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='ecostay.css') }}" />
+{% endblock %} {% block content %}
+<header>
+  <div class="container">
+    <h1>EcoStay</h1>
+    <p>Discover eco-friendly accommodations in Karnataka</p>
+  </div>
+</header>
+
+<main>
+  <section class="search-section container">
+    <form id="search-form" class="inline-form">
+      <div class="form-group">
+        <label for="city">Select City:</label>
+        <select id="city" name="city" required>
+          <option value="">Select a city</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Search</button>
+    </form>
+  </section>
+
+  <section id="results-section" class="hidden container">
+    <h2>Eco-Friendly Stays in <span id="city-name"></span></h2>
+
+    <div class="view-toggle">
+      <button class="view-button active" data-view="list">Hide Map</button>
+      <button class="view-button" data-view="map">Show Map</button>
+    </div>
+
+    <div class="category-tabs">
+      <button class="tab-button active" data-category="all">All Stays</button>
+      <button class="tab-button" data-category="hotels">Hotels</button>
+      <button class="tab-button" data-category="resorts">Resorts</button>
+      <button class="tab-button" data-category="homestays">Homestays</button>
+    </div>
+
+    <div id="map-container" class="map-view">
+      <div id="google-map"></div>
+      <div id="map-list"></div>
+    </div>
+
+    <div id="stays-grid" class="results-grid"></div>
+  </section>
+</main>
+{% endblock %} {% block scripts %}
+<script>
+  function initMap() {
+    // Your existing map initialization code
+  }
+</script>
+<script src="{{ url_for('static', filename='ecostay.js') }}"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&libraries=places&callback=initMap"
+  defer
+></script>
+{% endblock %}

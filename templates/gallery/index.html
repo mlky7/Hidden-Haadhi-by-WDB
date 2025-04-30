@@ -1,0 +1,388 @@
+{% extends "base.html" %} {% block title %}Hidden ಹಾದಿ{% endblock %} {% block
+additional_css %}
+<style>
+  .profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .profile-header {
+    position: relative;
+    margin-bottom: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .profile-cover {
+    height: 200px;
+    background: linear-gradient(135deg, #012808, #27ae60);
+    border-radius: 8px 8px 0 0;
+  }
+
+  .profile-info {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 2rem 2rem;
+    margin-top: -60px;
+  }
+
+  .profile-avatar {
+    position: relative;
+    margin-right: 2rem;
+  }
+
+  .profile-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .edit-avatar-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #012808;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .profile-details h1 {
+    font-size: 2rem;
+    color: #012808;
+    margin-bottom: 0.5rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .stat-card i {
+    font-size: 2rem;
+    color: #012808;
+    margin-bottom: 1rem;
+  }
+
+  .stat-card h3 {
+    font-size: 1.5rem;
+    color: #012808;
+    margin-bottom: 0.5rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .gallery-item {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .gallery-item.other-category {
+    border-left: 4px solid #ffd700; /* Golden border for "Other" category */
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .gallery-item-info {
+    padding: 1.5rem;
+  }
+
+  .gallery-item-info h6 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #012808;
+  }
+
+  /* Style for "Other" category text */
+  .other-category .gallery-item-info p:first-of-type {
+    color: #856404;
+    background-color: #fff3cd;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  .drop-zone {
+    border: 2px dashed #012808;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .drop-zone:hover {
+    background: #f0f8f1;
+  }
+
+  .eco-traveler-badge {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .profile-info {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .profile-avatar {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="profile-container">
+  <!-- Profile Header -->
+  <div class="profile-header">
+    <div class="profile-cover"></div>
+    <div class="profile-info">
+      <div class="profile-avatar">
+        <img
+          src="{{ url_for('static', filename=user.profile_image) }}"
+          alt="Profile Picture"
+        />
+        <button class="edit-avatar-btn"><i class="fas fa-camera"></i></button>
+      </div>
+      <div class="profile-details">
+        <h1>{{ user.name }}</h1>
+        {% if user.location %}
+        <p><i class="fas fa-map-marker-alt"></i> {{ user.location }}</p>
+        {% endif %}
+        <p class="eco-traveler-badge">Eco Traveler Level 2</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Grid -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <i class="fas fa-route"></i>
+      <h3>12</h3>
+      <p>Trips Planned</p>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-leaf"></i>
+      <h3>245 kg</h3>
+      <p>CO₂ Saved</p>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-award"></i>
+      <h3>8</h3>
+      <p>Eco Badges</p>
+    </div>
+    <div class="stat-card">
+      <i class="fas fa-map-marked-alt"></i>
+      <h3>15</h3>
+      <p>Places Visited</p>
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h5 class="card-title mb-0">My Gallery</h5>
+        <div class="d-flex gap-2">
+          <select class="form-select" id="category-filter">
+            <option value="">All Places</option>
+            <option value="abbey_falls">Abbey Falls</option>
+            <option value="baba_budangiri">Baba Budangiri</option>
+            <option value="bangalore_palace">Bangalore Palace</option>
+            <option value="brindavan_gardens">Brindavan Gardens</option>
+            <option value="chamundi_hills">Chamundi Hills</option>
+            <option value="cubbon_park">Cubbon Park</option>
+            <option value="hebbe_falls">Hebbe Falls</option>
+            <option value="lalbagh">Lalbagh</option>
+            <option value="mullayanagiri">Mullayanagiri</option>
+            <option value="mysore_palace">Mysore Palace</option>
+            <option value="rajas_seat">Raja's Seat</option>
+            <option value="st_philomenas_church">St. Philomena's Church</option>
+            <option value="vidhana_soudha">Vidhana Soudha</option>
+          </select>
+          <select class="form-select" id="location-filter">
+            <option value="">All Locations</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Mysore">Mysore</option>
+            <option value="Kodagu">Kodagu</option>
+            <option value="Chikkamagaluru">Chikkamagaluru</option>
+            <option value="Other">Other</option>
+          </select>
+          <button class="btn btn-primary" id="add-photo-btn">
+            <i class="fas fa-plus"></i> Add Photo
+          </button>
+        </div>
+      </div>
+
+      <!-- Upload Section -->
+      <div id="upload-section" class="mb-4">
+        <div class="drop-zone" id="drop-zone">
+          <input type="file" id="file-input" accept="image/*" class="d-none" />
+          <p>Drag & Drop an image or click to select</p>
+        </div>
+        <div
+          id="preview-container"
+          class="text-center mt-3"
+          style="display: none"
+        >
+          <img id="preview" src="" alt="Preview" class="img-fluid rounded" />
+        </div>
+        <div id="result" class="mt-3" style="display: none">
+          <div class="alert alert-success">
+            <p id="prediction-text" class="mb-1"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div id="gallery-grid" class="gallery-grid">
+        {% for item in gallery %}
+        <div
+          class="gallery-item"
+          data-location="{{ item.location }}"
+          data-category="{{ item.prediction|lower|replace(' ', '_') }}"
+        >
+          <img src="{{ item.image }}" alt="{{ item.prediction }}" />
+          <div class="gallery-item-info">
+            <h6>{{ item.prediction }}</h6>
+            <p class="mb-0">
+              Location: {{ item.location }}<br />
+              <small>{{ item.timestamp }}</small>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block additional_js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const addPhotoBtn = document.getElementById("add-photo-btn");
+    const viewGalleryBtn = document.getElementById("view-gallery-btn");
+    const uploadSection = document.getElementById("upload-section");
+    const galleryGrid = document.getElementById("gallery-grid");
+    const dropZone = document.getElementById("drop-zone");
+    const fileInput = document.getElementById("file-input");
+    const preview = document.getElementById("preview");
+    const previewContainer = document.getElementById("preview-container");
+    const result = document.getElementById("result");
+
+    // Button handlers
+    addPhotoBtn.addEventListener("click", () => {
+      uploadSection.classList.remove("d-none");
+      galleryGrid.classList.add("d-none");
+      fileInput.click();
+    });
+
+    viewGalleryBtn.addEventListener("click", () => {
+      uploadSection.classList.add("d-none");
+      galleryGrid.classList.remove("d-none");
+    });
+
+    // File handling
+    dropZone.addEventListener("click", () => fileInput.click());
+
+    dropZone.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      dropZone.style.borderColor = "#27ae60";
+    });
+
+    dropZone.addEventListener("dragleave", () => {
+      dropZone.style.borderColor = "#012808";
+    });
+
+    dropZone.addEventListener("drop", (e) => {
+      e.preventDefault();
+      const files = e.dataTransfer.files;
+      if (files.length > 0) {
+        handleFile(files[0]);
+      }
+    });
+
+    fileInput.addEventListener("change", (e) => {
+      if (e.target.files.length > 0) {
+        handleFile(e.target.files[0]);
+      }
+    });
+
+    function handleFile(file) {
+      if (!file.type.startsWith("image/")) {
+        alert("Please upload an image file");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        preview.src = e.target.result;
+        previewContainer.style.display = "block";
+
+        // Create FormData and send to server
+        const formData = new FormData();
+        formData.append("file", file);
+
+        fetch("/predict", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              result.style.display = "block";
+              document.getElementById("prediction-text").textContent =
+                "Prediction: " + data.prediction;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("An error occurred while processing the image");
+          });
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,825 @@
+{
+  "bangalore": [
+    {
+      "name": "Our Native Village - Eco & Pet Friendly Resort",
+      "location": "Hesaraghatta, Bangalore",
+      "coordinates": { "lat": 13.1387, "lng": 77.4876 },
+      "eco_features": [
+        "Earthly architecture",
+        "Energy conservation",
+        "Water conservation",
+        "Waste management"
+      ],
+      "amenities": [
+        "Pet-friendly rooms",
+        "Authentic Karnataka cuisine",
+        "Swimming pool",
+        "Team-building activities"
+      ],
+      "price_range": "\u20B9 6,500 - \u20B9 10,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.ournativevillage.com"
+    },
+    {
+      "name": "Silver Oak Resort",
+      "location": "Rajanukunte, Bangalore",
+      "coordinates": { "lat": 13.1912, "lng": 77.5689 },
+      "eco_features": [
+        "Green landscaping",
+        "Energy-efficient lighting",
+        "Local sourcing"
+      ],
+      "amenities": [
+        "Swimming pool",
+        "Restaurant",
+        "24/7 guest services",
+        "Conference facilities"
+      ],
+      "price_range": "\u20B9 4,000 - \u20B9 7,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://silveroakindia.in"
+    },
+    {
+      "name": "Kadackal Farms, Mallika, Hivehomes",
+      "location": "Dodda Byalakere, Bangalore",
+      "coordinates": { "lat": 13.1723, "lng": 77.5367 },
+      "eco_features": [
+        "Organic farming",
+        "Sustainable materials",
+        "Waste recycling"
+      ],
+      "amenities": ["Farmstay experience", "Home-cooked meals", "Nature walks"],
+      "price_range": "\u20B9 3,000 - \u20B9 5,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1504567961542-e24d9439a724?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "http://www.v2uservices.com"
+    },
+    {
+      "name": "FabHotel Prime The Venue By Seasons Suites",
+      "location": "Yelahanka, Bangalore",
+      "coordinates": { "lat": 13.1598, "lng": 77.5592 },
+      "eco_features": [
+        "Energy-efficient appliances",
+        "Water-saving fixtures",
+        "Local employment"
+      ],
+      "amenities": ["Free WiFi", "Breakfast included", "Gym", "Parking"],
+      "price_range": "\u20B9 2,500 - \u20B9 4,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.fabhotels.com/hotels-in-bangalore/fabhotel-the-venue-gonewzoj.html"
+    },
+    {
+      "name": "DEJAVOO RESORT",
+      "location": "Hesaraghatta, Bangalore",
+      "coordinates": { "lat": 13.1445, "lng": 77.4901 },
+      "eco_features": ["Green spaces", "Solar lighting", "Waste segregation"],
+      "amenities": ["Outdoor activities", "Restaurant", "Event spaces"],
+      "price_range": "\u20B9 5,000 - \u20B9 8,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1501117716987-67454a23e189?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://example.com/dejavoo-resort"
+    },
+    {
+      "name": "Angsana Oasis Spa And Resort",
+      "location": "Rajanukunte, Bangalore",
+      "coordinates": { "lat": 13.1976, "lng": 77.5702 },
+      "eco_features": [
+        "Sustainable landscaping",
+        "Water recycling",
+        "Eco-friendly spa products"
+      ],
+      "amenities": ["Spa", "Swimming pool", "Car rentals", "Sauna"],
+      "price_range": "\u20B9 8,000 - \u20B9 12,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.angsana.com/india/bangalore"
+    },
+    {
+      "name": "MikkieHouse B&B",
+      "location": "Yelahanka, Bangalore",
+      "coordinates": { "lat": 13.1599, "lng": 77.5593 },
+      "eco_features": [
+        "Local sourcing",
+        "Energy-efficient design",
+        "Composting"
+      ],
+      "amenities": ["Home-cooked breakfast", "Free WiFi", "Garden access"],
+      "price_range": "\u20B9 2,500 - \u20B9 4,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1591825729269-caeb344f6df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://example.com/mikkiehouse-bnb"
+    },
+    {
+      "name": "SaffronStays Surabhi Villa",
+      "location": "Rajanukunte, Bangalore",
+      "coordinates": { "lat": 13.1854, "lng": 77.5654 },
+      "eco_features": [
+        "Sustainable architecture",
+        "Organic garden",
+        "Rainwater harvesting"
+      ],
+      "amenities": ["Private pool", "4-bedroom villa", "Barbecue area"],
+      "price_range": "\u20B9 15,000 - \u20B9 20,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.saffronstays.com/view/surabhi-villa-4bedroom-private-villa-on-the-outskirts-of-bangalore"
+    },
+    {
+      "name": "Limelights Premium Suites & Residences",
+      "location": "Yelahanka New Town, Bangalore",
+      "coordinates": { "lat": 13.1032, "lng": 77.5876 },
+      "eco_features": [
+        "Energy-efficient appliances",
+        "Green roofing",
+        "Waste recycling"
+      ],
+      "amenities": ["Free WiFi", "Gym", "Parking", "Kitchenette"],
+      "price_range": "\u20B9 3,500 - \u20B9 6,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "http://limelightshomes.com"
+    }
+  ],
+  "mysore": [
+    {
+      "name": "Ramu Green Lake Cottage",
+      "location": "Hebbal, Mysuru",
+      "coordinates": { "lat": 12.3607, "lng": 76.599 },
+      "eco_features": [
+        "Lake conservation",
+        "Sustainable landscaping",
+        "Waste recycling"
+      ],
+      "amenities": ["Lake-view cottages", "Free WiFi", "Parking", "Restaurant"],
+      "price_range": "\u20B9 3,000 - \u20B9 5,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.makemytrip.com/hotels/ramu_green_lake_cottages-details-mysore.html"
+    },
+    {
+      "name": "The Palmyrah Tenements",
+      "location": "Hebbal Industrial Area, Mysuru",
+      "coordinates": { "lat": 12.355, "lng": 76.6 },
+      "eco_features": [
+        "Sustainable materials",
+        "Energy-efficient design",
+        "Community gardens"
+      ],
+      "amenities": [
+        "Vegetarian restaurant",
+        "Conference halls",
+        "Free parking",
+        "WiFi"
+      ],
+      "price_range": "\u20B9 1,500 - \u20B9 3,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.tripadvisor.com/Hotel_Review-g297633-d2358540-Reviews-The_Palmyrah_Tenements-Mysuru_Mysore_Mysore_District_Karnataka.html"
+    },
+    {
+      "name": "Mysore Mayflower Hotel",
+      "location": "Metagalli, Mysuru",
+      "coordinates": { "lat": 12.3419, "lng": 76.6197 },
+      "eco_features": [
+        "Energy-efficient lighting",
+        "Water conservation",
+        "Local sourcing"
+      ],
+      "amenities": ["Restaurant", "Free WiFi", "Room service", "Parking"],
+      "price_range": "\u20B9 2,500 - \u20B9 4,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "http://www.mysoremayflower.com"
+    },
+    {
+      "name": "Hotel Kalyani",
+      "location": "Hebbal Industrial Area, Mysuru",
+      "coordinates": { "lat": 12.3512, "lng": 76.5958 },
+      "eco_features": [
+        "Water-saving fixtures",
+        "Eco-friendly toiletries",
+        "Waste segregation"
+      ],
+      "amenities": ["Restaurant", "Free WiFi", "Parking", "24-hour front desk"],
+      "price_range": "\u20B9 2,000 - \u20B9 3,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://hotelkalyani.com"
+    },
+    {
+      "name": "ibis Styles Mysuru",
+      "location": "Metagalli, Mysuru",
+      "coordinates": { "lat": 12.342, "lng": 76.6198 },
+      "eco_features": [
+        "Energy-efficient appliances",
+        "Sustainable practices",
+        "Pet-friendly policies"
+      ],
+      "amenities": ["Pet-friendly rooms", "Restaurant", "Gym", "Free WiFi"],
+      "price_range": "\u20B9 4,000 - \u20B9 6,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://all.accor.com/hotel/C2L5/index.en.shtml"
+    },
+    {
+      "name": "Silent Shores Resort & Spa",
+      "location": "Hootagalli, Mysuru",
+      "coordinates": { "lat": 12.36, "lng": 76.597 },
+      "eco_features": [
+        "Sustainable landscaping",
+        "Eco-friendly spa products",
+        "Water conservation"
+      ],
+      "amenities": [
+        "Outdoor pool",
+        "Spa",
+        "Multi-cuisine restaurant",
+        "Kids play area"
+      ],
+      "price_range": "\u20B9 5,000 - \u20B9 8,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://silentshoresresort.com"
+    },
+    {
+      "name": "Jalmahal Resort and Spa",
+      "location": "Bugathagalli, Mysuru",
+      "coordinates": { "lat": 12.2635, "lng": 76.6732 },
+      "eco_features": [
+        "Eco-friendly construction",
+        "Organic gardens",
+        "Waste recycling"
+      ],
+      "amenities": [
+        "Outdoor pool",
+        "Spa",
+        "Billiards room",
+        "Multi-cuisine restaurant"
+      ],
+      "price_range": "\u20B9 4,500 - \u20B9 7,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1501117716987-67454a23e189?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "http://www.jalmahalresort.com"
+    },
+    {
+      "name": "New Sharada Resorts",
+      "location": "Srirangapatna, Mysuru",
+      "coordinates": { "lat": 12.422, "lng": 76.688 },
+      "eco_features": [
+        "River conservation",
+        "Sustainable materials",
+        "Local artisan support"
+      ],
+      "amenities": [
+        "Swimming pool",
+        "Restaurant",
+        "Tribal experience",
+        "Parking"
+      ],
+      "price_range": "\u20B9 3,500 - \u20B9 6,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "http://www.newsharadaresorts.com"
+    },
+    {
+      "name": "The Windflower Resorts and Spa Mysuru",
+      "location": "Nazarbad, Mysuru",
+      "coordinates": { "lat": 12.298, "lng": 76.665 },
+      "eco_features": [
+        "Sustainable landscaping",
+        "Eco-friendly spa therapies",
+        "Energy-efficient design"
+      ],
+      "amenities": [
+        "Outdoor pool",
+        "Spa",
+        "Multi-cuisine restaurant",
+        "Banquet halls"
+      ],
+      "price_range": "\u20B9 7,000 - \u20B9 12,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.thewindflower.com"
+    },
+    {
+      "name": "Golden Landmark Resort",
+      "location": "Metagalli, Mysuru",
+      "coordinates": { "lat": 12.3415, "lng": 76.6195 },
+      "eco_features": [
+        "Sustainable materials",
+        "Water conservation",
+        "Local sourcing"
+      ],
+      "amenities": ["Spa", "Bar", "Swimming pool", "Kids play area"],
+      "price_range": "\u20B9 5,500 - \u20B9 8,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "http://www.goldenlandmark.in"
+    }
+  ],
+  "coorg": [
+    {
+      "name": "Coorg Green Farm Resort",
+      "location": "Kushalnagar, Coorg",
+      "coordinates": { "lat": 12.458, "lng": 75.959 },
+      "eco_features": [
+        "Sustainable landscaping",
+        "Organic farming",
+        "Waste recycling"
+      ],
+      "amenities": ["Outdoor pool", "Spa", "Restaurant", "Free WiFi"],
+      "price_range": "\u20B9 4,000 - \u20B9 7,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1504567961542-e24d9439a724?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.makemytrip.com/hotels/coorg_green_farm_resort-details-coorg.html"
+    },
+    {
+      "name": "Rainforest Retreat",
+      "location": "Galibeedu, Madikeri, Coorg",
+      "coordinates": { "lat": 12.391, "lng": 75.735 },
+      "eco_features": [
+        "Organic farming",
+        "Biodiversity conservation",
+        "Sustainable agriculture"
+      ],
+      "amenities": [
+        "Guided treks",
+        "Bird watching",
+        "Organic meals",
+        "Cottages"
+      ],
+      "price_range": "\u20B9 3,500 - \u20B9 6,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1501117716987-67454a23e189?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "http://www.rainforestours.com"
+    },
+    {
+      "name": "The Ibnii",
+      "location": "Ibnivalavadi Village, Madikeri, Coorg",
+      "coordinates": { "lat": 12.388, "lng": 75.728 },
+      "eco_features": [
+        "Eco-luxury design",
+        "Coffee plantation conservation",
+        "Rainwater harvesting"
+      ],
+      "amenities": [
+        "Private pool villas",
+        "Spa",
+        "Coffee shop",
+        "Holistic wellness programs"
+      ],
+      "price_range": "\u20B9 15,000 - \u20B9 25,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.ibnii.com"
+    },
+    {
+      "name": "Eco Habitat",
+      "location": "Guddehosuru, Kushalnagar, Coorg",
+      "coordinates": { "lat": 12.466, "lng": 75.965 },
+      "eco_features": [
+        "Sustainable farming",
+        "Eco-friendly cottages",
+        "Waste management"
+      ],
+      "amenities": [
+        "Farmstay experience",
+        "Organic meals",
+        "Nature walks",
+        "Free parking"
+      ],
+      "price_range": "\u20B9 3,000 - \u20B9 5,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1591825729269-caeb344f6df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "http://www.ecohabitat.in"
+    },
+    {
+      "name": "Coorg Wilderness Resort & Spa",
+      "location": "Mekeri, Madikeri, Coorg",
+      "coordinates": { "lat": 12.415, "lng": 75.74 },
+      "eco_features": [
+        "Sustainable architecture",
+        "Forest conservation",
+        "Energy-efficient design"
+      ],
+      "amenities": ["Spa", "Fitness center", "Bar", "Hill-view suites"],
+      "price_range": "\u20B9 12,000 - \u20B9 20,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.coorgwildernessresort.in"
+    },
+    {
+      "name": "Ibnisprings Chalets Madikeri Coorg",
+      "location": "Ibnivalavadi Rural, Madikeri, Coorg",
+      "coordinates": { "lat": 12.387, "lng": 75.727 },
+      "eco_features": [
+        "Eco-friendly chalets",
+        "Rainwater harvesting",
+        "Local sourcing"
+      ],
+      "amenities": [
+        "Private balconies",
+        "Restaurant",
+        "Nature trails",
+        "Free WiFi"
+      ],
+      "price_range": "\u20B9 8,000 - \u20B9 12,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.ibnisprings.com"
+    },
+    {
+      "name": "Smile Stays Coorg",
+      "location": "Karnangeri, Madikeri, Coorg",
+      "coordinates": { "lat": 12.425, "lng": 75.735 },
+      "eco_features": [
+        "Sustainable materials",
+        "Local employment",
+        "Waste recycling"
+      ],
+      "amenities": [
+        "Home-cooked meals",
+        "Free WiFi",
+        "Parking",
+        "Garden access"
+      ],
+      "price_range": "\u20B9 2,500 - \u20B9 4,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.makemytrip.com/hotels/smile_stays_coorg-details-coorg.html"
+    },
+    {
+      "name": "Aiyappa Stays - Best Homestay in Coorg",
+      "location": "Mekeri, Madikeri, Coorg",
+      "coordinates": { "lat": 12.416, "lng": 75.741 },
+      "eco_features": [
+        "Organic gardening",
+        "Eco-friendly construction",
+        "Water conservation"
+      ],
+      "amenities": [
+        "Home-cooked meals",
+        "Nature walks",
+        "Free parking",
+        "WiFi"
+      ],
+      "price_range": "\u20B9 3,000 - \u20B9 5,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1591825729269-caeb344f6df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://jsdl.in/IEW-99SUS8WZMTA-ST"
+    },
+    {
+      "name": "Sunbird Homestay Coorg",
+      "location": "Karavale Bagada, Madikeri, Coorg",
+      "coordinates": { "lat": 12.43, "lng": 75.73 },
+      "eco_features": [
+        "Sustainable landscaping",
+        "Local sourcing",
+        "Waste segregation"
+      ],
+      "amenities": [
+        "Home-cooked meals",
+        "Garden access",
+        "Free parking",
+        "WiFi"
+      ],
+      "price_range": "\u20B9 2,500 - \u20B9 4,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.tripadvisor.com/Hotel_Review-g297628-d14076384-Reviews-Sunbird_Homestay-Coorg_Kodagu_District_Karnataka.html"
+    },
+    {
+      "name": "Prakruthidhama Homestay",
+      "location": "Madikeri, Coorg",
+      "coordinates": { "lat": 12.426, "lng": 75.736 },
+      "eco_features": [
+        "Eco-friendly construction",
+        "Organic gardening",
+        "Water conservation"
+      ],
+      "amenities": [
+        "Home-cooked meals",
+        "Free WiFi",
+        "Parking",
+        "Nature trails"
+      ],
+      "price_range": "\u20B9 3,000 - \u20B9 5,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1591825729269-caeb344f6df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "http://prakruthidhama.in"
+    }
+  ],
+  "mangalore": [
+    {
+      "name": "St. Antony Homestay - Best Homestay in Mangalore",
+      "location": "Kadri, Mangaluru",
+      "coordinates": { "lat": 12.893, "lng": 74.856 },
+      "eco_features": [
+        "Sustainable practices",
+        "Waste recycling",
+        "Energy-efficient appliances"
+      ],
+      "amenities": [
+        "3-bedroom villa",
+        "Free WiFi",
+        "Private parking",
+        "Air conditioning"
+      ],
+      "price_range": "\u20B9 2,500 - \u20B9 5,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://stantonyhomestay.in"
+    },
+    {
+      "name": "Rockwoods Homestay",
+      "location": "Kankanady, Mangaluru",
+      "coordinates": { "lat": 12.876, "lng": 74.86 },
+      "eco_features": [
+        "Green landscaping",
+        "Local sourcing",
+        "Waste segregation"
+      ],
+      "amenities": [
+        "Four cushy rooms",
+        "Fully-equipped kitchen",
+        "Free parking",
+        "WiFi"
+      ],
+      "price_range": "\u20B9 2,000 - \u20B9 4,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1591825729269-caeb344f6df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.thrillophilia.com/tours/rockwood-homestays-mangalore"
+    },
+    {
+      "name": "Glanwoods Inn - Homestay in Mangalore",
+      "location": "Kulashekara, Mangaluru",
+      "coordinates": { "lat": 12.921, "lng": 74.886 },
+      "eco_features": [
+        "Sustainable materials",
+        "Energy-efficient design",
+        "Water conservation"
+      ],
+      "amenities": ["Cozy rooms", "Free WiFi", "Parking", "Garden access"],
+      "price_range": "\u20B9 2,000 - \u20B9 3,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://linktr.ee/glanwoods_inn"
+    },
+    {
+      "name": "Manasa Cottages",
+      "location": "Vamanjoor, Mangaluru",
+      "coordinates": { "lat": 12.933, "lng": 74.896 },
+      "eco_features": [
+        "Eco-friendly construction",
+        "Organic gardening",
+        "Waste recycling"
+      ],
+      "amenities": [
+        "Cottages near water park",
+        "Restaurant",
+        "Free parking",
+        "WiFi"
+      ],
+      "price_range": "\u20B9 3,000 - \u20B9 5,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.makemytrip.com/hotels/manasa_cottages-details-mangalore.html"
+    },
+    {
+      "name": "Summer Sands Beach Resort",
+      "location": "Ullal, Mangaluru",
+      "coordinates": { "lat": 12.825, "lng": 74.842 },
+      "eco_features": [
+        "Beach conservation",
+        "Sustainable landscaping",
+        "Eco-friendly practices"
+      ],
+      "amenities": ["Beachfront access", "Outdoor pool", "Restaurant", "Spa"],
+      "price_range": "\u20B9 5,000 - \u20B9 8,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://summersands.in"
+    },
+    {
+      "name": "The Estate Resort",
+      "location": "Badagumijaru, Mangaluru",
+      "coordinates": { "lat": 12.97, "lng": 74.95 },
+      "eco_features": [
+        "Sustainable agriculture",
+        "Rainwater harvesting",
+        "Waste management"
+      ],
+      "amenities": ["Outdoor pool", "Restaurant", "Nature trails", "Free WiFi"],
+      "price_range": "\u20B9 4,500 - \u20B9 7,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1504567961542-e24d9439a724?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "http://www.estateresort.in"
+    },
+    {
+      "name": "The Ocean View",
+      "location": "Someshwara, Mangaluru",
+      "coordinates": { "lat": 12.816, "lng": 74.846 },
+      "eco_features": [
+        "Beach conservation",
+        "Eco-friendly materials",
+        "Water conservation"
+      ],
+      "amenities": ["Sea-view rooms", "Restaurant", "Free WiFi", "Parking"],
+      "price_range": "\u20B9 4,000 - \u20B9 6,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://theoceanviews.com"
+    },
+    {
+      "name": "Woodlands Hotel",
+      "location": "Hampankatta, Mangaluru",
+      "coordinates": { "lat": 12.87, "lng": 74.844 },
+      "eco_features": [
+        "Energy-efficient lighting",
+        "Local sourcing",
+        "Waste segregation"
+      ],
+      "amenities": ["Restaurant", "Free WiFi", "Parking", "Room service"],
+      "price_range": "\u20B9 2,500 - \u20B9 4,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.makemytrip.com/hotels/woodlands_hotel-details-mangalore.html"
+    },
+    {
+      "name": "RiverRoost Resorts",
+      "location": "Moodushedde, Mangaluru",
+      "coordinates": { "lat": 12.926, "lng": 74.88 },
+      "eco_features": [
+        "Riverside conservation",
+        "Sustainable landscaping",
+        "Eco-friendly practices"
+      ],
+      "amenities": [
+        "Riverside cottages",
+        "Outdoor pool",
+        "Restaurant",
+        "Free WiFi"
+      ],
+      "price_range": "\u20B9 5,000 - \u20B9 8,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "http://www.riverroostresorts.com"
+    },
+    {
+      "name": "Urban Retreat Homestay",
+      "location": "Vamanjoor, Mangaluru",
+      "coordinates": { "lat": 12.925, "lng": 74.895 },
+      "eco_features": [
+        "Pet-friendly policies",
+        "Energy-efficient appliances",
+        "Waste recycling"
+      ],
+      "amenities": [
+        "Flat-screen TV",
+        "Free WiFi",
+        "Free parking",
+        "24-hour front desk"
+      ],
+      "price_range": "\u20B9 2,000 - \u20B9 4,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.makemytrip.com/hotels/urban_retreat_homestay-details-mangalore.html"
+    }
+  ],
+  "chikkamagalur": [
+    {
+      "name": "Gateway Chikmagalur Resort",
+      "location": "Jyothi Nagar, Chikkamagalur",
+      "coordinates": { "lat": 13.316, "lng": 75.775 },
+      "eco_features": [
+        "Sustainable landscaping",
+        "Energy-efficient design",
+        "Local sourcing"
+      ],
+      "amenities": ["Outdoor pool", "Spa", "Restaurant", "Free WiFi"],
+      "price_range": "\u20B9 8,000 - \u20B9 12,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.gateway-hotels.com/en/hotels/gateway-chikmagalur"
+    },
+    {
+      "name": "Ecstasy Resort",
+      "location": "Hirekolale Village, Chikkamagalur",
+      "coordinates": { "lat": 13.35, "lng": 75.766 },
+      "eco_features": [
+        "Eco-friendly chalets",
+        "Waste recycling",
+        "Water conservation"
+      ],
+      "amenities": [
+        "Outdoor pool",
+        "Garden",
+        "24-hour reception",
+        "Free parking"
+      ],
+      "price_range": "\u20B9 3,500 - \u20B9 6,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1501117716987-67454a23e189?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.planetofhotels.com/en/india/chikmagalur/staymaker-ecstasy-resort"
+    },
+    {
+      "name": "The Coral Cliff Resort",
+      "location": "Kaimara, Chikkamagalur",
+      "coordinates": { "lat": 13.32, "lng": 75.78 },
+      "eco_features": [
+        "Sustainable materials",
+        "Coffee plantation conservation",
+        "Rainwater harvesting"
+      ],
+      "amenities": ["Restaurant", "Free WiFi", "Nature walks", "Parking"],
+      "price_range": "\u20B9 4,000 - \u20B9 7,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1504567961542-e24d9439a724?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.makemytrip.com/hotels/the_coral_cliff_resort-details-chikmagalur.html"
+    },
+    {
+      "name": "The Vintage Chikkamagaluru",
+      "location": "Mugathihalli, Chikkamagalur",
+      "coordinates": { "lat": 13.4, "lng": 75.75 },
+      "eco_features": [
+        "Organic farming",
+        "Sustainable landscaping",
+        "Waste segregation"
+      ],
+      "amenities": [
+        "Home-cooked meals",
+        "Coffee plantation tours",
+        "Free parking",
+        "WiFi"
+      ],
+      "price_range": "\u20B9 3,000 - \u20B9 5,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1591825729269-caeb344f6df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.thrillophilia.com/tours/the-vintage-homestay-chikmagalur"
+    },
+    {
+      "name": "The Grassland Homestay",
+      "location": "Mathavara, Chikkamagalur",
+      "coordinates": { "lat": 13.41, "lng": 75.76 },
+      "eco_features": [
+        "Eco-friendly construction",
+        "Local sourcing",
+        "Waste recycling"
+      ],
+      "amenities": [
+        "Home-cooked meals",
+        "Garden access",
+        "Free parking",
+        "Indoor games"
+      ],
+      "price_range": "\u20B9 2,500 - \u20B9 4,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.makemytrip.com/hotels/the_grassland_homestay-details-chikmagalur.html"
+    },
+    {
+      "name": "Charlie's Hidden Leaf Homestay",
+      "location": "Kesavinamane, Chikkamagalur",
+      "coordinates": { "lat": 13.318, "lng": 75.77 },
+      "eco_features": [
+        "Sustainable materials",
+        "Energy-efficient appliances",
+        "Water conservation"
+      ],
+      "amenities": ["Cozy rooms", "Free WiFi", "Parking", "Nature trails"],
+      "price_range": "\u20B9 2,500 - \u20B9 4,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.tripadvisor.com/Hotel_Review-g297629-d21387058-Reviews-Charlie_s_Hidden_Leaf_Homestay-Chikkamagaluru_Chikkamagaluru_District_Karnataka.html"
+    },
+    {
+      "name": "Gudlu Resorts Chikmagalur",
+      "location": "Mudigere, Chikkamagalur",
+      "coordinates": { "lat": 13.15, "lng": 75.6 },
+      "eco_features": [
+        "Sustainable landscaping",
+        "Organic gardening",
+        "Waste management"
+      ],
+      "amenities": [
+        "Outdoor pool",
+        "Restaurant",
+        "Coffee plantation tours",
+        "Free WiFi"
+      ],
+      "price_range": "\u20B9 4,500 - \u20B9 7,500 per night",
+      "image_url": "https://images.unsplash.com/photo-1504567961542-e24d9439a724?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.makemytrip.com/hotels/gudlu_resorts_chikmagalur-details-chikmagalur.html"
+    },
+    {
+      "name": "Sunyata Eco Hotel",
+      "location": "Beekanahalli, Chikkamagalur",
+      "coordinates": { "lat": 13.31, "lng": 75.765 },
+      "eco_features": [
+        "Mud construction",
+        "Solar power",
+        "Rainwater harvesting"
+      ],
+      "amenities": ["Restaurant", "Free WiFi", "Garden", "Yoga sessions"],
+      "price_range": "\u20B9 5,000 - \u20B9 8,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.sunyataecohotel.com"
+    },
+    {
+      "name": "Sereno Barn Eco Homestay",
+      "location": "Arasinaguppe, Chikkamagalur",
+      "coordinates": { "lat": 13.33, "lng": 75.79 },
+      "eco_features": [
+        "Eco-friendly construction",
+        "Organic farming",
+        "Waste recycling"
+      ],
+      "amenities": [
+        "Home-cooked meals",
+        "Nature walks",
+        "Free parking",
+        "WiFi"
+      ],
+      "price_range": "\u20B9 3,500 - \u20B9 6,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1591825729269-caeb344f6df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.outlooktraveller.com/stays/homestays/check-out-these-homestays-in-chikmagalur-with-the-best-views"
+    },
+    {
+      "name": "Seegodu Premium Coffee Estate Homestay",
+      "location": "Balehonnur, Chikkamagalur",
+      "coordinates": { "lat": 13.35, "lng": 75.46 },
+      "eco_features": [
+        "Coffee plantation conservation",
+        "Sustainable agriculture",
+        "Water conservation"
+      ],
+      "amenities": [
+        "Coffee estate tours",
+        "Home-cooked meals",
+        "Free parking",
+        "WiFi"
+      ],
+      "price_range": "\u20B9 3,500 - \u20B9 6,000 per night",
+      "image_url": "https://images.unsplash.com/photo-1504567961542-e24d9439a724?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+      "source_url": "https://www.thrillophilia.com/tours/seegodu-premium-coffee-estate-homestay-chikmagalur"
+    }
+  ]
+}

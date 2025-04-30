@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block title %}Network Coverage{% endblock %} {%
+block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='network.css') }}" />
+<style>
+    .network-info {
+        padding: 10px;
+    }
+    .map-container {
+        height: 500px;
+        width: 100%;
+        margin: 20px 0;
+    }
+</style>
+{% endblock %} {% block content %}
+<div class="container">
+  <div class="card">
+    <h1>Network Coverage Checker</h1>
+    <p>
+      Click anywhere on the map to check network coverage details for that
+      location.
+    </p>
+    <div id="map" class="map-container"></div>
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='network.js') }}"></script>
+<script>
+    // Fallback error handler
+    function gm_authFailure() {
+        document.getElementById('map').innerHTML = 
+            '<div class="error-message">Failed to load Google Maps. Please check your API key.</div>';
+    }
+</script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&callback=initNetworkMap&loading=async"
+  defer
+></script>
+{% endblock %}
+

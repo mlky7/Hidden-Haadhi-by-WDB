@@ -1,0 +1,178 @@
+{% extends "gallery/base.html" %} {% block additional_css %}
+<style>
+  .register-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+
+  .register-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .register-title {
+    color: #012808;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-control {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 12px;
+    width: 100%;
+  }
+
+  .form-control:focus {
+    border-color: #012808;
+    box-shadow: 0 0 0 0.2rem rgba(1, 40, 8, 0.25);
+  }
+
+  .avatar-upload {
+    position: relative;
+    margin: 20px 0;
+  }
+
+  .avatar-preview {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #012808;
+    margin: 0 auto 20px;
+    overflow: hidden;
+  }
+
+  .avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .btn-register {
+    background-color: #012808;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .login-link a {
+    color: #012808;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="register-container">
+  <div class="register-card">
+    <h1 class="register-title">Create Account</h1>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
+    <form
+      method="POST"
+      action="{{ url_for('register') }}"
+      enctype="multipart/form-data"
+    >
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          placeholder="Full Name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          placeholder="Email"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="location"
+          placeholder="Location (Optional)"
+        />
+      </div>
+      <div class="avatar-upload">
+        <div class="avatar-preview">
+          <img
+            id="avatar-preview-img"
+            src="{{ url_for('static', filename='images/default-avatar.png') }}"
+            alt="Avatar preview"
+          />
+        </div>
+        <input
+          type="file"
+          class="form-control"
+          name="avatar"
+          id="avatar-input"
+          accept="image/*"
+        />
+      </div>
+      <button type="submit" class="btn-register">Register</button>
+    </form>
+    <div class="login-link">
+      <p>
+        Already have an account? <a href="{{ url_for('login') }}">Login here</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document
+    .getElementById("avatar-input")
+    .addEventListener("change", function (e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          document.getElementById("avatar-preview-img").src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+</script>
+{% endblock %}

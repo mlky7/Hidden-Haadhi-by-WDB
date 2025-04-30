@@ -1,0 +1,479 @@
+{% extends "base.html" %} {% block title %}Smart Packing Assistant - Hidden
+ಹಾದಿ{% endblock %} {% block additional_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='packing_assistant.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="packing-container">
+  <!-- Left side: Form -->
+  <div class="form-section">
+    <h2>Smart Packing Assistant</h2>
+
+    <!-- Success Message Display -->
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %} {% if 'sent' in message.lower() %}
+    <div class="alert alert-success">
+      <i class="fas fa-check-circle"></i> {{ message }}
+    </div>
+    {% else %}
+    <div class="alert alert-error">{{ message }}</div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+    <form
+      action="{{ url_for('packing_assistant') }}"
+      method="post"
+      id="packingForm"
+    >
+      <div class="form-section">
+        <h3>Destination Details</h3>
+        <div class="form-group">
+          <label for="destination">Country/City:</label>
+          <input type="text" id="destination" name="destination" required />
+        </div>
+
+        <div class="form-group">
+          <label for="environment_type">Environment:</label>
+          <select id="environment_type" name="environment_type" required>
+            <option value="urban">Urban</option>
+            <option value="rural">Rural</option>
+            <option value="nature">Nature</option>
+            <option value="mixed">Mixed</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Travel Dates</h3>
+        <div class="form-group">
+          <label for="start_date">Start Date:</label>
+          <input type="date" id="start_date" name="start_date" required />
+        </div>
+        <div class="form-group">
+          <label for="end_date">End Date:</label>
+          <input type="date" id="end_date" name="end_date" required />
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Trip Details</h3>
+        <div class="form-group">
+          <label for="trip_purpose">Trip Purpose:</label>
+          <select id="trip_purpose" name="trip_purpose" required>
+            <option value="leisure_beach">Leisure - Beach</option>
+            <option value="leisure_city">Leisure - City Touring</option>
+            <option value="leisure_hiking">Leisure - Hiking</option>
+            <option value="leisure_camping">Leisure - Camping</option>
+            <option value="business">Business</option>
+            <option value="mixed">Mixed Purpose</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Activities Planned:</label>
+          <div class="checkbox-group">
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="swimming"
+                name="activities[]"
+                value="swimming"
+              />
+              <span>Swimming</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="hiking"
+                name="activities[]"
+                value="hiking"
+              />
+              <span>Hiking</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="formal_events"
+                name="activities[]"
+                value="formal_events"
+              />
+              <span>Formal Events</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="photography"
+                name="activities[]"
+                value="photography"
+              />
+              <span>Photography</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="camping"
+                name="activities[]"
+                value="camping"
+              />
+              <span>Camping</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="cycling"
+                name="activities[]"
+                value="cycling"
+              />
+              <span>Cycling</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="workshops"
+                name="activities[]"
+                value="workshops"
+              />
+              <span>Workshops/Conferences</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="sightseeing"
+                name="activities[]"
+                value="sightseeing"
+              />
+              <span>Sightseeing</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="accommodation">Accommodation Type:</label>
+          <select id="accommodation" name="accommodation" required>
+            <option value="hotel">Hotel</option>
+            <option value="hostel">Hostel</option>
+            <option value="camping">Camping</option>
+            <option value="homestay">Homestay</option>
+            <option value="eco_lodge">Eco-lodge</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="baggage_type">Baggage Type:</label>
+          <select id="baggage_type" name="baggage_type" required>
+            <option value="backpack">Backpack</option>
+            <option value="suitcase">Suitcase</option>
+            <option value="carry_on">Carry-on Only</option>
+            <option value="bike_panniers">Bike Panniers</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h3>Preferences & Special Requirements</h3>
+        <div class="form-group">
+          <label>Eco Preferences:</label>
+          <div class="checkbox-group">
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="public_transport"
+                name="eco_preferences[]"
+                value="public_transport"
+              />
+              <span>Prefer Public Transport</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="eco_hotels"
+                name="eco_preferences[]"
+                value="eco_hotels"
+              />
+              <span>Eco-friendly Hotels</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="vegan_food"
+                name="eco_preferences[]"
+                value="vegan_food"
+              />
+              <span>Local Vegan/Vegetarian Restaurants</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="zero_waste"
+                name="eco_preferences[]"
+                value="zero_waste"
+              />
+              <span>Zero-waste Activities</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="sustainable_shops"
+                name="eco_preferences[]"
+                value="sustainable_shops"
+              />
+              <span>Sustainable Shopping</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="organic_cafes"
+                name="eco_preferences[]"
+                value="organic_cafes"
+              />
+              <span>Organic Cafes</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="plastic_free"
+                name="eco_preferences[]"
+                value="plastic_free"
+              />
+              <span>Plastic-free Accommodations</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Special Needs:</label>
+          <div class="checkbox-group">
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="kids"
+                name="special_needs[]"
+                value="kids"
+              />
+              <span>Kids</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="elderly"
+                name="special_needs[]"
+                value="elderly"
+              />
+              <span>Elderly</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="pets"
+                name="special_needs[]"
+                value="pets"
+              />
+              <span>Pets</span>
+            </label>
+
+            <label class="checkbox-option">
+              <input
+                type="checkbox"
+                id="medical"
+                name="special_needs[]"
+                value="medical"
+              />
+              <span>Medical Supplies</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="style_preference">Style Preference:</label>
+          <select id="style_preference" name="style_preference" required>
+            <option value="casual">Casual</option>
+            <option value="sporty">Sporty</option>
+            <option value="formal">Formal</option>
+            <option value="mixed">Mixed</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="comfort_level">Comfort Level:</label>
+          <select id="comfort_level" name="comfort_level" required>
+            <option value="minimalist">Minimalist</option>
+            <option value="moderate">Moderate</option>
+            <option value="comfort">Full Comfort</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="laundry_access">Laundry Access:</label>
+          <select id="laundry_access" name="laundry_access" required>
+            <option value="yes">Yes - Will do laundry</option>
+            <option value="no">No - Pack for full duration</option>
+            <option value="maybe">Unsure</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">
+        Generate Packing List
+      </button>
+    </form>
+  </div>
+
+  <!-- Right side: Results -->
+  <div
+    class="results-section {% if not packing_list %}empty{% endif %}"
+    id="resultsSection"
+  >
+    <div id="loadingIndicator" style="display: none">
+      <div class="spinner"></div>
+      <p>Generating your packing list...</p>
+    </div>
+
+    {% if packing_list %}
+    <div class="packing-results">
+      <h2>Your Packing List</h2>
+      <div class="eco-stats">
+        <div class="stat-card">
+          <h4>Estimated Weight</h4>
+          <p>{{ weight_estimate }} kg</p>
+        </div>
+        <div class="stat-card">
+          <h4>Carbon Impact</h4>
+          <p>{{ carbon_impact }}</p>
+        </div>
+      </div>
+      <div class="packing-list-content">{{ packing_list | safe }}</div>
+
+      <!-- Add email form -->
+      <div class="email-share-section" id="emailSection">
+        <h3>Get PDF via Email</h3>
+        <form
+          id="packingEmailForm"
+          action="{{ url_for('send_packing_list') }}"
+          method="post"
+        >
+          <input type="hidden" name="packing_list" value="{{ packing_list }}" />
+          <input
+            type="hidden"
+            name="weight_estimate"
+            value="{{ weight_estimate }}"
+          />
+          <input
+            type="hidden"
+            name="carbon_impact"
+            value="{{ carbon_impact }}"
+          />
+          <input
+            type="hidden"
+            name="duration"
+            value="{{ form_data.duration }}"
+          />
+          <input
+            type="hidden"
+            name="destination"
+            value="{{ form_data.destination }}"
+          />
+          <input
+            type="hidden"
+            name="travelers"
+            value="{{ form_data.travelers }}"
+          />
+          <input type="hidden" name="season" value="{{ form_data.season }}" />
+          <div class="form-group">
+            <label for="packingEmail">Email Address:</label>
+            <input
+              type="email"
+              id="packingEmail"
+              name="email"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-envelope"></i> Get PDF via Email
+          </button>
+        </form>
+        <div id="emailMessage" class="message-container"></div>
+      </div>
+    </div>
+    {% else %}
+    <div class="empty-state">
+      <h3>Ready to help you pack!</h3>
+      <p>Fill out the form to get your personalized packing list.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<script>
+  document
+    .getElementById("packingForm")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Show loading indicator
+      document.getElementById("loadingIndicator").style.display = "block";
+
+      // Disable submit button
+      document.getElementById("submitBtn").disabled = true;
+
+      // Get form data
+      const formData = new FormData(this);
+
+      // Submit form using fetch
+      fetch("{{ url_for('packing_assistant') }}", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.text())
+        .then((html) => {
+          // Replace the entire content with the new HTML
+          document.documentElement.innerHTML = html;
+
+          // Scroll to results if they exist
+          const resultsSection = document.getElementById("resultsSection");
+          if (resultsSection) {
+            resultsSection.scrollIntoView({ behavior: "smooth" });
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert(
+            "An error occurred while generating the packing list. Please try again."
+          );
+        })
+        .finally(() => {
+          // Hide loading indicator and re-enable submit button
+          document.getElementById("loadingIndicator").style.display = "none";
+          document.getElementById("submitBtn").disabled = false;
+        });
+    });
+
+  // Auto-hide success messages
+  document.addEventListener("DOMContentLoaded", function () {
+    const alerts = document.querySelectorAll(".alert-success");
+    alerts.forEach((alert) => {
+      setTimeout(() => {
+        alert.classList.add("fade-out");
+        setTimeout(() => {
+          alert.style.display = "none";
+        }, 500);
+      }, 5000);
+    });
+  });
+</script>
+{% endblock %}

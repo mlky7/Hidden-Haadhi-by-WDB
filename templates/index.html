@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block title %}EcoTravel Planner - Hidden ಹಾದಿ{%
+endblock %} {% block additional_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='homepage.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="container">
+  <div class="calculator card">
+    <h2>Calculate Your Trip's Carbon Footprint</h2>
+    <form action="{{ url_for('calculate_footprint') }}" method="post">
+      <div class="form-group">
+        <label for="distance">Distance (km):</label>
+        <input type="number" id="distance" name="distance" required />
+      </div>
+      <div class="form-group">
+        <label for="transport">Mode of Transport:</label>
+        <select id="transport" name="transport" class="form-control">
+          <option value="car">Car</option>
+          <option value="bus">Bus</option>
+          <option value="train">Train</option>
+          <option value="bicycle">Bicycle</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nights">Number of Nights:</label>
+        <input type="number" id="nights" name="nights" value="0" />
+      </div>
+      <div class="form-group">
+        <label for="accommodation">Accommodation Type:</label>
+        <select id="accommodation" name="accommodation">
+          <option value="hotel">Hotel</option>
+          <option value="hostel">Hostel</option>
+          <option value="eco_lodge">Eco Lodge</option>
+          <option value="camping">Camping</option>
+        </select>
+      </div>
+      <button type="submit" class="primary-button">Calculate</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

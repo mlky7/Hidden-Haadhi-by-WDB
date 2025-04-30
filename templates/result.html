@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carbon Footprint Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Your Trip's Carbon Footprint</h1>
+      <div class="result">
+        <div class="emissions-breakdown">
+          <h2>Emissions Breakdown</h2>
+          <div class="emissions-card">
+            <h3>Transport</h3>
+            <p>Distance: {{ distance }} km</p>
+            <p>Mode: {{ transport | replace('_', ' ') | title }}</p>
+            <p class="emissions">{{ transport_emissions }} kg CO2</p>
+          </div>
+
+          {% if nights > 0 %}
+          <div class="emissions-card">
+            <h3>Accommodation</h3>
+            <p>Nights: {{ nights }}</p>
+            <p>Type: {{ accommodation | replace('_', ' ') | title }}</p>
+            <p class="emissions">{{ accommodation_emissions }} kg CO2</p>
+          </div>
+          {% endif %}
+
+          <div class="emissions-card total">
+            <h3>Total Emissions</h3>
+            <p class="emissions">{{ total_emissions }} kg CO2</p>
+          </div>
+        </div>
+
+        {% if alternatives %}
+        <div class="alternatives">
+          <h2>Lower-Impact Alternatives</h2>
+          <div class="alternatives-grid">
+            {% for alt in alternatives %}
+            <div class="alternative-card">
+              <div class="alternative-header">
+                <h3>{{ alt.mode }}</h3>
+                <span class="reduction-badge"
+                  >-{{ alt.reduction_percent }}%</span
+                >
+              </div>
+              <div class="alternative-details">
+                <div class="emissions-info">
+                  <p class="emissions-value">{{ alt.emissions }} kg CO2</p>
+                  <p class="emissions-label">Total Emissions</p>
+                </div>
+                <div class="savings-info">
+                  <p class="savings-value">{{ alt.savings }} kg CO2</p>
+                  <p class="savings-label">Potential Savings</p>
+                </div>
+              </div>
+              <div class="eco-impact">
+                <div class="impact-icon">🌱</div>
+                <p>
+                  Choosing this option could reduce your carbon footprint by {{
+                  alt.reduction_percent }}%
+                </p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="eco-tips">
+          <h3>Eco-friendly Travel Tips:</h3>
+          <ul>
+            <li>Consider taking trains for shorter distances</li>
+            <li>Use public transportation when possible</li>
+            <li>Choose direct flights to reduce emissions</li>
+            <li>Stay in eco-lodges or sustainable accommodations</li>
+            <li>Consider carbon offset programs</li>
+            <li>Pack light to reduce fuel consumption</li>
+            <li>Use shared airport transfers</li>
+          </ul>
+        </div>
+
+        <a href="{{ url_for('home') }}" class="back-btn"
+          >Calculate Another Trip</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

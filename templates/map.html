@@ -1,0 +1,137 @@
+{% extends "base.html" %} {% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='map.css') }}" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+{% endblock %} {% block content %}
+
+<!-- Success Message Display -->
+{% with messages = get_flashed_messages() %} {% if messages %} {% for message in
+messages %} {% if 'sent' in message.lower() %}
+<div class="alert alert-success">
+  <i class="fas fa-check-circle"></i> {{ message }}
+</div>
+{% else %}
+<div class="alert alert-error">{{ message }}</div>
+{% endif %} {% endfor %} {% endif %} {% endwith %}
+
+<div class="container">
+  <!-- Input forms section at the top -->
+  <div class="input-section">
+    <h2>Route Calculator</h2>
+    <div class="route-inputs-row">
+      <div class="input-group">
+        <input type="text" id="origin" placeholder="Enter origin" />
+      </div>
+      <div class="input-group">
+        <input type="text" id="destination" placeholder="Enter destination" />
+      </div>
+      <div class="input-group">
+        <select id="mode">
+          <option value="DRIVING">Car (Petrol)</option>
+          <option value="ELECTRIC_CAR">Electric Car</option>
+          <option value="HYBRID_CAR">Hybrid Car</option>
+          <option value="TRANSIT">Public Transit</option>
+          <option value="BUS">Bus</option>
+          <option value="PLANE_ECONOMY">Plane (Economy)</option>
+          <option value="PLANE_BUSINESS">Plane (Business)</option>
+          <option value="BICYCLING">Bicycle</option>
+          <option value="WALKING">Walking</option>
+        </select>
+      </div>
+      <!-- Add the toggle button here -->
+      <div class="input-group toggle-container">
+        <label class="toggle-switch">
+          <input type="checkbox" id="showHiddenSpots" />
+          <span class="slider round"></span>
+        </label>
+        <label for="showHiddenSpots">Include Hidden Spots?</label>
+      </div>
+      <div class="input-group">
+        <button onclick="calculateRoute()" class="calculate-btn">
+          Calculate Route
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map section -->
+  <div class="map-container">
+    <div id="map"></div>
+    <div class="controls-container">
+      <div class="route-inputs">
+        <input type="text" id="origin" placeholder="Enter origin" />
+        <input type="text" id="destination" placeholder="Enter destination" />
+        <select id="mode">
+          <option value="driving">Driving</option>
+          <option value="walking">Walking</option>
+          <option value="bicycling">Bicycling</option>
+          <option value="transit">Transit</option>
+        </select>
+        <button onclick="calculateRoute()">Calculate Route</button>
+      </div>
+
+      <div id="routeInfo"></div>
+
+      <!-- Email form section -->
+      <div class="email-share-section" id="emailSection" style="display: none">
+        <h3>Get Route Details via Email</h3>
+        <form
+          id="routeEmailForm"
+          action="{{ url_for('send_route_details') }}"
+          method="post"
+        >
+          <input type="hidden" id="routeDetails" name="route_details" />
+          <input type="hidden" id="routeOrigin" name="origin" />
+          <input type="hidden" id="routeDestination" name="destination" />
+          <input type="hidden" id="routeMode" name="mode" />
+          <input type="hidden" id="routeSummary" name="route_summary" />
+          <div class="form-group">
+            <label for="routeEmail">Email Address:</label>
+            <input
+              type="email"
+              id="routeEmail"
+              name="email"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-envelope"></i> Send Route Details
+          </button>
+        </form>
+        <div id="emailMessage" class="message-container"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block scripts %}
+<script>
+  function gm_authFailure() {
+    console.error("Google Maps failed to load");
+    document.getElementById("map").innerHTML =
+      '<div class="error-message">Failed to load Google Maps. Please check your API key.</div>';
+  }
+</script>
+<script src="{{ url_for('static', filename='map.js') }}"></script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&libraries=places,marker&callback=initializeMap&loading=async&map_ids=69beaab0152d0e7f"
+  defer
+></script>
+
+<!-- Auto-hide success messages -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const alerts = document.querySelectorAll(".alert-success");
+    alerts.forEach((alert) => {
+      setTimeout(() => {
+        alert.classList.add("fade-out");
+        setTimeout(() => {
+          alert.style.display = "none";
+        }, 500);
+      }, 5000);
+    });
+  });
+</script>
+{% endblock %}

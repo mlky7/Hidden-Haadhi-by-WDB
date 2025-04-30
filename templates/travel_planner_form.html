@@ -1,0 +1,302 @@
+{% extends "base.html" %} {% block title %}AI Travel Planner - Hidden ಹಾದಿ{%
+endblock %} {% block additional_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='trip_planner.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="container">
+  <div class="form-section">
+    <h1>AI Travel Planner</h1>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <div class="flash-messages">
+      {% for message in messages %}
+      <div class="flash-message">{{ message }}</div>
+      {% endfor %}
+    </div>
+    {% endif %} {% endwith %}
+
+    <form
+      id="plannerForm"
+      action="{{ url_for('travel_planner') }}"
+      method="post"
+    >
+      <div class="form-group">
+        <label for="destinations">Destinations:</label>
+        <select id="destinations" name="destinations" multiple required>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Mysore">Mysore</option>
+          <option value="Hampi">Hampi</option>
+          <option value="Coorg">Coorg</option>
+          <option value="Chikmagalur">Chikmagalur</option>
+          <option value="Gokarna">Gokarna</option>
+          <option value="Badami">Badami</option>
+          <option value="Jog_Falls">Jog Falls</option>
+          <option value="Udupi">Udupi</option>
+          <option value="Mangalore">Mangalore</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="travelers">Number of Travelers:</label>
+        <input type="number" id="travelers" name="travelers" min="1" required />
+      </div>
+
+      <div class="form-group">
+        <label for="group_type">Group Type:</label>
+        <select id="group_type" name="group_type" required>
+          <option value="family">Family</option>
+          <option value="couple">Couple</option>
+          <option value="solo">Solo</option>
+          <option value="friends">Friends</option>
+          <option value="business">Business</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="transport_mode">Preferred Mode of Transport:</label>
+        <select id="transport_mode" name="transport_mode" required>
+          <option value="public">Public Transport</option>
+          <option value="electric">Electric Vehicle</option>
+          <option value="hybrid">Hybrid Vehicle</option>
+          <option value="bicycle">Bicycle</option>
+          <option value="mixed">Mixed (Eco-friendly options)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="budget">Budget Range (INR):</label>
+        <select id="budget" name="budget" required>
+          <option value="budget">Under 20,000</option>
+          <option value="moderate">20,000 - 50,000</option>
+          <option value="luxury">Above 50,000</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="eco_preferences">Eco Preferences:</label>
+        <select id="eco_preferences" name="eco_preferences" multiple required>
+          <option value="public_transport">Prefer Public Transport</option>
+          <option value="eco_hotels">Eco-friendly Hotels</option>
+          <option value="vegan_food">Local Vegan/Vegetarian Restaurants</option>
+          <option value="zero_waste">Zero-waste Activities</option>
+          <option value="sustainable_shops">Sustainable Shopping</option>
+          <option value="organic_cafes">Organic Cafes</option>
+          <option value="plastic_free">Plastic-free Accommodations</option>
+        </select>
+        <small>Hold Ctrl/Cmd to select multiple preferences</small>
+      </div>
+
+      <div class="form-group">
+        <label for="rest_stops">Include Rest Stops:</label>
+        <select id="rest_stops" name="rest_stops">
+          <option value="minimal">Minimal Stops</option>
+          <option value="moderate">Regular Eco-friendly Stops</option>
+          <option value="frequent">Frequent Green Breaks</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="sustainability_level">Sustainability Priority:</label>
+        <select id="sustainability_level" name="sustainability_level">
+          <option value="balanced">
+            Balanced (Mix of Convenience & Sustainability)
+          </option>
+          <option value="eco_focused">
+            Eco-Focused (Prioritize Environmental Impact)
+          </option>
+          <option value="ultra_green">
+            Ultra Green (Maximum Sustainability)
+          </option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">Generate Travel Plan</button>
+    </form>
+  </div>
+
+  <div class="result-section" id="resultSection">
+    {% if itinerary %}
+    <h2>Your Travel Plan</h2>
+    <div class="trip-summary">
+      <h3>Trip Details</h3>
+      <p>Dates: {{ form_data.start_date }} to {{ form_data.end_date }}</p>
+      <p>Travelers: {{ form_data.travelers }} ({{ form_data.group_type }})</p>
+      <p>Transport: {{ form_data.transport_mode }}</p>
+      <p>Budget: {{ form_data.budget }}</p>
+    </div>
+    <div class="itinerary-content">{{ itinerary | safe }}</div>
+
+    <!-- Add WhatsApp form -->
+    <div class="whatsapp-share-section">
+      <h3><i class="fab fa-whatsapp"></i> Share via WhatsApp</h3>
+
+      {% if config.get('FLASK_ENV') == 'development' %}
+      <div class="test-mode-alert">
+        <p><strong>⚠️ Test Mode Active</strong></p>
+        <p>Messages will be sent to test number: 1-555-644-1004</p>
+        <p>Your input number will be ignored in test mode.</p>
+      </div>
+      {% endif %}
+
+      <form
+        id="whatsappForm"
+        action="{{ url_for('send_whatsapp') }}"
+        method="post"
+      >
+        <input type="hidden" name="itinerary" value="{{ itinerary }}" />
+        <input
+          type="hidden"
+          name="trip_data"
+          value="{{ form_data|tojson|safe }}"
+        />
+
+        <div class="form-group">
+          <label for="phone_number">WhatsApp Number:</label>
+          <input
+            type="text"
+            id="phone_number"
+            name="phone_number"
+            placeholder="Enter 10-digit mobile number"
+            pattern="[0-9]{10}"
+            maxlength="10"
+            required
+          />
+          <small class="form-text text-muted">
+            {% if config.get('FLASK_ENV') == 'development' %} In test mode -
+            actual messages will go to test number {% else %} Enter 10 digits
+            only. Country code (+91) will be added automatically. {% endif %}
+          </small>
+        </div>
+
+        <button type="submit">
+          <i class="fab fa-whatsapp"></i>
+          Send to WhatsApp
+        </button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("whatsappForm")
+        .addEventListener("submit", function (e) {
+          const button = this.querySelector("button");
+          const originalText = button.innerHTML;
+
+          button.disabled = true;
+          button.innerHTML =
+            '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+          // Form will submit normally, the loading state will be cleared on page reload
+        });
+    </script>
+
+    <!-- Add email form -->
+    <div class="email-share-section">
+      <h3>Get Your Travel Plan via Email</h3>
+      <form
+        id="emailForm"
+        class="email-form"
+        action="{{ url_for('send_travel_plan') }}"
+        method="post"
+      >
+        <input type="hidden" name="itinerary" value="{{ itinerary }}" />
+        <input
+          type="hidden"
+          name="start_date"
+          value="{{ form_data.start_date }}"
+        />
+        <input type="hidden" name="end_date" value="{{ form_data.end_date }}" />
+        <input
+          type="hidden"
+          name="travelers"
+          value="{{ form_data.travelers }}"
+        />
+        <input type="hidden" name="budget" value="{{ form_data.budget }}" />
+        {% for destination in form_data.destinations %}
+        <input type="hidden" name="destinations[]" value="{{ destination }}" />
+        {% endfor %}
+
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email address"
+            required
+          />
+        </div>
+        <button type="submit" class="btn-primary">
+          <i class="fas fa-envelope"></i>
+          Get PDF Travel Plan
+        </button>
+      </form>
+      <div id="emailMessage" class="message-container"></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("emailForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const form = this;
+          const button = form.querySelector("button");
+          const messageContainer = document.getElementById("emailMessage");
+          const originalButtonText = button.innerHTML;
+
+          // Disable button and show loading state
+          button.disabled = true;
+          button.innerHTML =
+            '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+          try {
+            const response = await fetch(form.action, {
+              method: "POST",
+              body: new FormData(form),
+            });
+
+            const data = await response.json();
+
+            messageContainer.textContent =
+              data.message || "Travel plan sent successfully!";
+            messageContainer.className = "message-container success";
+            form.reset();
+          } catch (error) {
+            messageContainer.textContent =
+              "Failed to send travel plan. Please try again.";
+            messageContainer.className = "message-container error";
+          } finally {
+            button.disabled = false;
+            button.innerHTML = originalButtonText;
+          }
+        });
+    </script>
+    {% endif %}
+  </div>
+
+  <div id="loadingIndicator" class="loading">
+    <div class="spinner"></div>
+    <p>Generating your personalized travel plan...</p>
+  </div>
+</div>
+
+<script>
+  document
+    .getElementById("plannerForm")
+    .addEventListener("submit", function () {
+      document.getElementById("loadingIndicator").classList.add("active");
+    });
+</script>
+{% endblock %}

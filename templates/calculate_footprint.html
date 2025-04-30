@@ -1,0 +1,115 @@
+{% extends "base.html" %} {% block title %}Carbon Calculator - Hidden ಹಾದಿ{%
+endblock %} {% block additional_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='calculator.css') }}"
+/>
+{% endblock %} {% block content %}
+<div class="main-content">
+  <div class="container calculator-container">
+    <!-- Left side: Calculator Form -->
+    <div class="calculator-card">
+      <h2>Carbon Footprint Calculator</h2>
+      <p class="calculator-description">
+        Make informed travel choices by calculating the environmental impact of
+        your journey
+      </p>
+
+      <form
+        action="{{ url_for('calculate_footprint') }}"
+        method="post"
+        id="calculatorForm"
+      >
+        <div class="form-group">
+          <label for="transport">Transport Mode:</label>
+          <select id="transport" name="transport" class="form-control" required>
+            <option value="train">Train (Lowest Impact)</option>
+            <option value="bus">Bus</option>
+            <option value="car">Car</option>
+            <option value="electric_car">Electric Car</option>
+            <option value="hybrid_car">Hybrid Car</option>
+            <option value="plane_economy">Plane (Economy)</option>
+            <option value="plane_business">Plane (Business)</option>
+            <option value="bicycle">Bicycle (Zero Emission)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="distance">Distance (km):</label>
+          <input
+            type="number"
+            id="distance"
+            name="distance"
+            class="form-control"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="nights">Number of Nights (optional):</label>
+          <input
+            type="number"
+            id="nights"
+            name="nights"
+            class="form-control"
+            min="0"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="accommodation">Accommodation Type:</label>
+          <select id="accommodation" name="accommodation" class="form-control">
+            <option value="hotel">Hotel</option>
+            <option value="hostel">Hostel</option>
+            <option value="eco_lodge">Eco Lodge</option>
+            <option value="camping">Camping</option>
+          </select>
+        </div>
+
+        <button type="submit" class="calculate-btn">Calculate Footprint</button>
+      </form>
+    </div>
+
+    <!-- Right side: Results -->
+    {% if total_emissions is defined %}
+    <div class="results-card">
+      <h2>Your Trip's Carbon Footprint</h2>
+
+      <div class="emissions-breakdown">
+        <div class="emissions-card">
+          <h3>Transport</h3>
+          <p>Distance: {{ distance }} km</p>
+          <p>Mode: {{ transport | replace('_', ' ') | title }}</p>
+          <p class="emissions">{{ transport_emissions }} kg CO2</p>
+        </div>
+
+        {% if nights > 0 %}
+        <div class="emissions-card">
+          <h3>Accommodation</h3>
+          <p>Nights: {{ nights }}</p>
+          <p>Type: {{ accommodation | replace('_', ' ') | title }}</p>
+          <p class="emissions">{{ accommodation_emissions }} kg CO2</p>
+        </div>
+        {% endif %}
+
+        <div class="emissions-card total">
+          <h3>Total Emissions</h3>
+          <p class="emissions">{{ total_emissions }} kg CO2</p>
+        </div>
+      </div>
+
+      <div class="eco-tips">
+        <h3>Eco-friendly Travel Tips:</h3>
+        <ul>
+          <li>Consider taking trains for shorter distances</li>
+          <li>Use public transportation when possible</li>
+          <li>Choose direct flights to reduce emissions</li>
+          <li>Stay in eco-lodges or sustainable accommodations</li>
+          <li>Consider carbon offset programs</li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,494 @@
+{% extends "base.html" %} {% block title %}My Profile - Karnataka Places
+Classifier{% endblock %} {% block content %}
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card profile-card">
+        <div class="card-body text-center">
+          <!-- Circular Avatar -->
+          <div class="avatar-wrapper mb-3">
+            <img
+              src="{{ url_for('static', filename=user.profile_image) }}"
+              class="rounded-circle avatar-img"
+              alt="{{ user.name }}'s profile picture"
+            />
+          </div>
+          <h5 class="card-title">{{ user.name }}</h5>
+          {% if user.location %}
+          <p class="card-text location-text">
+            <i class="fas fa-map-marker-alt"></i> {{ user.location }}
+          </p>
+          {% endif %}
+          <p class="card-text text-muted">
+            <i class="fas fa-calendar"></i> Joined {{
+            user.joined_date.strftime('%B %Y') }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div class="card gallery-card">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h5 class="card-title mb-0">My Gallery</h5>
+            <div class="d-flex gap-3">
+              <!-- Single Filter -->
+              <select class="form-select custom-select" id="category-filter">
+                <option value="">All Places</option>
+                <option value="abbey_falls">Abbey Falls</option>
+                <option value="baba_budangiri">Baba Budangiri</option>
+                <option value="bangalore_palace">Bangalore Palace</option>
+                <option value="brindavan_gardens">Brindavan Gardens</option>
+                <option value="chamundi_hills">Chamundi Hills</option>
+                <option value="cubbon_park">Cubbon Park</option>
+                <option value="hebbe_falls">Hebbe Falls</option>
+                <option value="lalbagh">Lalbagh</option>
+                <option value="mullayanagiri">Mullayanagiri</option>
+                <option value="mysore_palace">Mysore Palace</option>
+                <option value="rajas_seat">Raja's Seat</option>
+                <option value="st_philomenas_church">
+                  St. Philomena's Church
+                </option>
+                <option value="vidhana_soudha">Vidhana Soudha</option>
+                <option value="unknown">Unknown Landmarks</option>
+              </select>
+              <!-- Restore original upload button -->
+              <button
+                class="btn btn-primary custom-btn"
+                id="add-photo-btn"
+                onclick="document.getElementById('file-input').click();"
+              >
+                Add Photo
+              </button>
+              <input
+                type="file"
+                id="file-input"
+                style="display: none"
+                accept="image/*"
+                onchange="handleFileSelect(event)"
+              />
+              <!-- Clear Gallery Button -->
+              <button
+                type="button"
+                class="btn btn-danger custom-btn"
+                id="clear-gallery-btn"
+              >
+                <i class="fas fa-trash"></i> Clear Gallery
+              </button>
+            </div>
+          </div>
+
+          <!-- Upload Section -->
+          <div id="upload-section" class="mb-4" style="display: none">
+            <div class="drop-zone" id="drop-zone">
+              <input
+                type="file"
+                id="file-input"
+                accept="image/*"
+                class="d-none"
+              />
+              <p>Drag & Drop an image or click to select</p>
+            </div>
+            <div
+              id="preview-container"
+              class="text-center mt-3"
+              style="display: none"
+            >
+              <img
+                id="preview"
+                src=""
+                alt="Preview"
+                class="img-fluid rounded"
+              />
+            </div>
+            <div id="result" class="mt-3" style="display: none">
+              <div class="alert alert-success">
+                <p id="prediction-text" class="mb-1"></p>
+                <p id="confidence-text" class="mb-0"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Grid -->
+          <div id="gallery-grid" class="gallery-grid">
+            {% for item in gallery %}
+            <div class="gallery-item">
+              <img
+                src="{{ item.image }}"
+                alt="{{ item.prediction }}"
+                class="gallery-img"
+              />
+              <div class="gallery-item-info">
+                <h6>{{ item.prediction }}</h6>
+                <p class="mb-0">
+                  <span class="location-badge"
+                    >{{ item.location|default('Other') }}</span
+                  ><br />
+                  Confidence: {{ item.confidence }}<br />
+                  <small class="text-muted">{{ item.timestamp }}</small>
+                </p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block additional_css %}
+<style>
+  .container-fluid {
+    max-width: 1800px;
+    padding: 2rem;
+    background: #f8f9fa;
+  }
+
+  /* Profile Card Styles */
+  .profile-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(1, 40, 8, 0.1);
+    background: white;
+    transition: transform 0.3s ease;
+  }
+
+  .profile-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .avatar-wrapper {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(1, 40, 8, 0.15);
+    border: 4px solid #012808;
+  }
+
+  .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .avatar-img:hover {
+    transform: scale(1.05);
+  }
+
+  .location-text {
+    color: #012808;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .location-text i {
+    color: #012808;
+    margin-right: 0.5rem;
+  }
+
+  /* Gallery Card Styles */
+  .gallery-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(1, 40, 8, 0.1);
+    background: white;
+  }
+
+  .custom-select {
+    min-width: 180px;
+    border: 2px solid rgba(1, 40, 8, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem;
+    font-weight: 500;
+    color: #012808;
+  }
+
+  .custom-select:focus {
+    border-color: #012808;
+    box-shadow: 0 0 0 0.2rem rgba(1, 40, 8, 0.1);
+  }
+
+  .custom-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background-color: #6be081;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background-color: #7dff9b;
+    box-shadow: 0 4px 12px rgba(53, 201, 80, 0.2);
+  }
+
+  .btn-secondary {
+    background-color: #e9ecef;
+    border: none;
+    color: #012808;
+  }
+
+  .btn-secondary:hover {
+    background-color: #dee2e6;
+    color: #012808;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Gallery Grid Styles */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .gallery-item {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 4px 15px rgba(1, 40, 8, 0.1);
+  }
+
+  .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(1, 40, 8, 0.15);
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .gallery-item-info {
+    padding: 1.25rem;
+  }
+
+  .gallery-item-info h6 {
+    font-size: 1.1rem;
+    color: #012808;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .location-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(1, 40, 8, 0.1);
+    color: #012808;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .confidence-text {
+    color: #012808;
+    font-size: 0.9rem;
+  }
+
+  /* Make the profile card stick while scrolling */
+  @media (min-width: 768px) {
+    .col-md-3 .card {
+      position: sticky;
+      top: 1rem;
+    }
+  }
+
+  /* Animation for filtering */
+  .gallery-item {
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+
+  .gallery-item.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    display: none;
+  }
+</style>
+{% endblock %} {% block additional_js %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropZone = document.getElementById("drop-zone");
+    const fileInput = document.getElementById("file-input");
+    const preview = document.getElementById("preview");
+    const previewContainer = document.getElementById("preview-container");
+    const result = document.getElementById("result");
+    const uploadSection = document.getElementById("upload-section");
+    const addPhotoBtn = document.getElementById("add-photo-btn");
+    const clearGalleryBtn = document.getElementById("clear-gallery-btn");
+    const categoryFilter = document.getElementById("category-filter");
+    const locationFilter = document.getElementById("location-filter");
+
+    // Add click handler for clear gallery button
+    if (clearGalleryBtn) {
+      clearGalleryBtn.addEventListener("click", function (e) {
+        console.log("Clear gallery button clicked"); // Debug log
+        e.preventDefault();
+
+        if (
+          confirm(
+            "Are you sure you want to clear your gallery? This action cannot be undone."
+          )
+        ) {
+          console.log("User confirmed deletion"); // Debug log
+
+          // Show loading state
+          clearGalleryBtn.disabled = true;
+          clearGalleryBtn.innerHTML =
+            '<i class="fas fa-spinner fa-spin"></i> Clearing...';
+
+          // Add CSRF token if you're using Flask-WTF
+          const csrfToken = document.querySelector(
+            'meta[name="csrf-token"]'
+          )?.content;
+
+          fetch("/gallery/clear", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-Requested-With": "XMLHttpRequest",
+              "X-CSRFToken": csrfToken || "", // Include CSRF token if available
+            },
+            credentials: "same-origin",
+          })
+            .then((response) => {
+              console.log("Server response received:", response.status); // Debug log
+              return response.json();
+            })
+            .then((data) => {
+              console.log("Response data:", data); // Debug log
+              if (data.success) {
+                // Clear all images from the gallery
+                const galleryItems = document.querySelectorAll(".gallery-item");
+                galleryItems.forEach((item) => item.remove());
+
+                // Show success message
+                alert("Gallery cleared successfully!");
+
+                // Reload the page
+                window.location.reload();
+              } else {
+                throw new Error(data.error || "Failed to clear gallery");
+              }
+            })
+            .catch((error) => {
+              console.error("Error clearing gallery:", error);
+              alert("Failed to clear gallery: " + error.message);
+            })
+            .finally(() => {
+              // Reset button state
+              clearGalleryBtn.disabled = false;
+              clearGalleryBtn.innerHTML =
+                '<i class="fas fa-trash"></i> Clear Gallery';
+            });
+        }
+      });
+      console.log("Clear gallery event listener attached"); // Debug log
+    } else {
+      console.error("Clear gallery button not found!"); // Debug log
+    }
+
+    // Filter functionality
+    function filterGallery() {
+      const selectedCategory = categoryFilter.value.toLowerCase();
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      galleryItems.forEach((item) => {
+        const itemCategory = item.dataset.category.toLowerCase();
+        const shouldShow =
+          !selectedCategory || itemCategory === selectedCategory;
+        item.classList.toggle("hidden", !shouldShow);
+      });
+    }
+
+    categoryFilter.addEventListener("change", filterGallery);
+    locationFilter?.addEventListener("change", filterGallery);
+
+    // Existing button handlers
+    addPhotoBtn.addEventListener("click", () => {
+      uploadSection.style.display = "block";
+      fileInput.click();
+    });
+
+    dropZone.addEventListener("click", () => fileInput.click());
+
+    dropZone.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      dropZone.classList.add("dragover");
+    });
+
+    dropZone.addEventListener("dragleave", () => {
+      dropZone.classList.remove("dragover");
+    });
+
+    dropZone.addEventListener("drop", (e) => {
+      e.preventDefault();
+      dropZone.classList.remove("dragover");
+      const file = e.dataTransfer.files[0];
+      handleFile(file);
+    });
+
+    fileInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      handleFile(file);
+    });
+
+    function handleFile(file) {
+      if (!file) return;
+
+      if (!file.type.startsWith("image/")) {
+        alert("Please upload an image file");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        preview.src = e.target.result;
+        previewContainer.style.display = "block";
+      };
+      reader.readAsDataURL(file);
+
+      const formData = new FormData();
+      formData.append("file", file);
+
+      fetch("/predict", {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            document.getElementById(
+              "prediction-text"
+            ).textContent = `Predicted Place: ${data.prediction}`;
+            document.getElementById(
+              "confidence-text"
+            ).textContent = `Confidence: ${data.confidence}`;
+            result.style.display = "block";
+            setTimeout(() => location.reload(), 2000);
+          } else {
+            alert("Error: " + data.error);
+          }
+        })
+        .catch((error) => {
+          alert("Error: " + error);
+        });
+    }
+  });
+</script>
+{% endblock %} {% block scripts %} {{ super() }}
+<script src="{{ url_for('static', filename='gallerymain.js') }}"></script>
+{% endblock %}

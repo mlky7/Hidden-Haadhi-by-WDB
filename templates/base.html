@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Hidden ಹಾದಿ{% endblock %}</title>
+    <!-- Consolidated font imports -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='base.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    {% block additional_css %}{% endblock %}
+  </head>
+  <body>
+    <div class="root">
+      <nav class="navbar">
+        <div class="nav-content">
+          <!-- Logo Section -->
+          <a href="{{ url_for('home') }}" class="logo">
+            <img
+              src="{{ url_for('static', filename='images/logo.png') }}"
+              alt="Hidden ಹಾದಿ"
+              class="logo-img"
+            />
+          </a>
+
+          <!-- Navigation Links -->
+          <div class="nav-links-container">
+            <a
+              href="{{ url_for('travel_planner') }}"
+              class="travel-planner-btn"
+            >
+              <i class="fas fa-map-marked-alt"></i> Plan Your Trip
+            </a>
+            <a href="{{ url_for('ecostay') }}" class="feature-link">
+              <i class="fas fa-home"></i> EcoStays
+            </a>
+            <a href="{{ url_for('map') }}" class="feature-link">
+              <i class="fas fa-route"></i> Route Planner
+            </a>
+            <a href="{{ url_for('packing_assistant') }}" class="feature-link">
+              <i class="fas fa-suitcase"></i> Smart Packer
+            </a>
+            <a href="{{ url_for('network_coverage') }}" class="feature-link">
+              <i class="fas fa-signal"></i> Network Coverage
+            </a>
+            <a href="{{ url_for('calculate_footprint') }}" class="feature-link">
+              <i class="fas fa-leaf"></i> Carbon Calculator
+            </a>
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('dashboard') }}" class="feature-link">
+              <i class="fas fa-images"></i> My Gallery
+            </a>
+            <a href="{{ url_for('logout') }}" class="feature-link">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+            {% else %}
+            <a href="{{ url_for('login') }}" class="feature-link">
+              <i class="fas fa-sign-in-alt"></i> Gallery Login
+            </a>
+            <a href="{{ url_for('register') }}" class="feature-link">
+              <i class="fas fa-user-plus"></i> Register
+            </a>
+            {% endif %}
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+
+      <main class="main-content">{% block content %}{% endblock %}</main>
+    </div>
+
+    {% block scripts %}{% endblock %}
+  </body>
+</html>
